@@ -1,7 +1,7 @@
 import './Styles/Start.css'
 import './Styles/Media.css'
 import {createRef} from "react";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Start() {
     const wrapper: any = createRef()
@@ -9,20 +9,24 @@ function Start() {
 
     setTimeout(() => {
         wrapper.current.style.backgroundColor = 'rgba(0,0,0,0.9)'
-    },10)
+    }, 10)
     setTimeout(() => {
         welcome.current.classList.add('welcome__load-animation')
     }, 1700)
 
-    setInterval(() => {
-        if (welcome.current.classList.contains('big-shadow')) {
-            welcome.current.classList.remove('big-shadow')
-            welcome.current.classList.add('small-shadow')
-        } else {
-            welcome.current.classList.remove('small-shadow')
-            welcome.current.classList.add('big-shadow')
+    function shadowAnimation() {
+        if (welcome.current) {
+            if (welcome.current.classList.contains('big-shadow')) {
+                welcome.current.classList.remove('big-shadow')
+                welcome.current.classList.add('small-shadow')
+            } else {
+                welcome.current.classList.remove('small-shadow')
+                welcome.current.classList.add('big-shadow')
+            }
         }
-    }, 800)
+    }
+
+    setInterval(shadowAnimation, 800)
 
     const navigate = useNavigate()
     function startTest() {
