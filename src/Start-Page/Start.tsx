@@ -1,6 +1,7 @@
 import './Styles/Start.css'
 import './Styles/Media.css'
 import {createRef} from "react";
+import {Navigate, useNavigate} from "react-router-dom";
 
 function Start() {
     const wrapper: any = createRef()
@@ -23,13 +24,18 @@ function Start() {
         }
     }, 800)
 
+    const navigate = useNavigate()
+    function startTest() {
+        navigate('/test')
+    }
+
     return (
         <div id="wrapper" className="flex-property-set" ref={wrapper}>
             <div className="welcome flex-property-set" ref={welcome}>
                 <div className="welcome__content">
                     <p className="welcome__txt">Welcome : Do you want to start taking the test?</p>
                     <hr className="welcome__line"/>
-                    <button className="welcome__btn">Start</button>
+                    <button className="welcome__btn" onClick={startTest}>Start</button>
                 </div>
             </div>
         </div>
