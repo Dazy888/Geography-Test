@@ -50,7 +50,6 @@
 
 #wrapper {
   min-height: 100vh;
-  margin: auto;
 }
 
 .container {
@@ -59,6 +58,7 @@
   width: fit-content;
   font-family: "Roboto", sans-serif;
   padding: 30px;
+  margin: auto;
 }
 
 .top {
