@@ -49,12 +49,17 @@
 }
 
 #wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   min-height: 100vh;
   margin: auto;
 }
 
 .container {
-  width: 1500px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-family: "Roboto", sans-serif;
   padding: 30px;
 }
@@ -164,8 +169,8 @@
 }
 
 .content {
-  height: 880px;
   text-align: center;
+  margin: auto;
 }
 .content .content__txt {
   display: inline-block;

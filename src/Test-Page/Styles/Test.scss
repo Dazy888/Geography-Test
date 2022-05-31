@@ -40,13 +40,13 @@
 }
 
 #wrapper {
-  //width: fit-content;
+  width: fit-content;
   min-height: 100vh;
   margin: auto;
 }
 
 .container {
-  width: 1500px;
+  width: fit-content;
   font-family: 'Roboto', sans-serif;
   padding: 30px;
 }
@@ -171,8 +171,8 @@
 
 // Question And Img
 .content {
-  height: 880px;
   text-align: center;
+  margin: auto;
 
   .content__txt {
     display: inline-block;
