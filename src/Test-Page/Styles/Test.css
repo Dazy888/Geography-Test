@@ -244,8 +244,6 @@
 
 .content__next-btn {
   display: block;
-  width: 80px;
-  height: 80px;
   background: transparent;
   border: none;
   cursor: pointer;
