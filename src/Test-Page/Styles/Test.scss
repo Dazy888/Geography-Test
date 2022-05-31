@@ -60,7 +60,7 @@
   border-bottom: 3px solid rgb(111, 224, 202);
 
   // Icons
-  .clock-icon, .current-question-icon, .grades-icon {
+  .clock-icon, .current-question-icon {
     font-size: 40px;
     color: rgb(111, 224, 202);
   }
@@ -73,20 +73,17 @@
     margin-bottom: 50px;
   }
 
-  .grades-icon {
-    margin-bottom: 95px;
-  }
-
   // Live Time
   .top__timer {
-    width: 200px;
+    width: 530px;
     height: 250px;
 
     .top__svg {
       position: relative;
 
       .top__progress-ring {
-        margin-left: 30px;
+        display: block;
+        margin: auto;
       }
 
       .top__progress-ring_circle {
@@ -98,10 +95,10 @@
       .timer-txt {
         position: absolute;
         top: 65px;
-        left: 53px;
+        left: 215px;
 
         span {
-          font-size: 30px;
+          font-size: 40px;
 
           &:last-child {
             position: absolute;
@@ -119,7 +116,6 @@
     width: 530px;
     padding: 0 75px;
     border-left: 3px solid rgb(111, 224, 202);
-    border-right: 3px solid rgb(111, 224, 202);
     box-sizing: border-box;
 
     .top__rows {
@@ -144,31 +140,9 @@
       }
     }
   }
-
-  //  Grades
-  .top__grades {
-    width: 200px;
-    position: relative;
-
-    i {
-      margin-left: 40px;
-    }
-
-    .grades-txt {
-      width: fit-content;
-      display: block;
-      margin: auto;
-      font-size: 30px;
-
-      .top__grades-count {
-        display: inline-block;
-        transition: 0.6s;
-      }
-    }
-  }
 }
 
-// Question And Img
+// Question And Photos
 .content {
   text-align: center;
   margin: auto;
