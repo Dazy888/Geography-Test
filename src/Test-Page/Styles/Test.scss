@@ -168,7 +168,7 @@
   display: grid;
   grid-template-areas:  'a b'
                             'c d';
-  grid-gap: 30px;
+  grid-gap: 80px;
   justify-items: center;
   margin: 30px auto 0;
 
@@ -215,12 +215,11 @@
 
 //  Next Button
 .content__next-btn {
-  display: block;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: transform 0.5s, opacity 0.6s;
-  margin: auto;
+  margin-top: 50px;
 
   &:hover {
     transform: translateX(50px);
