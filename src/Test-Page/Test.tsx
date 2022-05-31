@@ -7,10 +7,13 @@ type PropsType = {
     sec: React.Ref<any>
     min: React.Ref<any>
     ms: React.Ref<any>
-    answers: React.Ref<any>
+    answersBl: React.Ref<any>
+    rows: React.Ref<any>
+    nextBtn: React.Ref<any>
+    content: React.Ref<any>
 }
 
-function Test({circle, sec, min, ms, answers}: PropsType) {
+function Test({content, circle, sec, min, ms, answersBl, rows, nextBtn}: PropsType) {
     return (
         <div id="wrapper">
             <div className="container">
@@ -28,7 +31,7 @@ function Test({circle, sec, min, ms, answers}: PropsType) {
                     </div>
                     <div className="top__current-question">
                         <i className="fa-solid fa-clipboard-question current-question-icon"></i>
-                        <div className="top__rows">
+                        <div className="top__rows" ref={rows}>
                             <div className="top__row flex-property-set_between">
                                 <span className="top__item flex-property-set_center top__item_selected"> <i
                                     className="fa-solid fa-1 num-icon"></i> </span>
@@ -59,12 +62,12 @@ function Test({circle, sec, min, ms, answers}: PropsType) {
                         </div>
                     </div>
                 </div>
-                <div className="content">
+                <div className="content" ref={content}>
                     <div className="content__question">
                         <p className="content__txt">What country is the biggest in Europe?</p>
                         <img src="../Photos/question-1-img.png" className="content__img"/>
                     </div>
-                    <div className="content__answers" ref={answers}>
+                    <div className="content__answers" ref={answersBl}>
                         <div className="content__option a">
                             <span className="content__letter flex-property-set_center"> <i
                                 className="fa-solid fa-a letter-icon"></i> </span>
@@ -89,7 +92,7 @@ function Test({circle, sec, min, ms, answers}: PropsType) {
                             <p className="answer-txt">Polish</p>
                         </div>
                     </div>
-                    <button className="content__next-btn"><i className="fa-regular fa-circle-right next-icon"></i></button>
+                    <button className="content__next-btn" ref={nextBtn}><i className="fa-regular fa-circle-right next-icon"></i></button>
                 </div>
             </div>
         </div>

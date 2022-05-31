@@ -36,8 +36,8 @@ let initialState = {
         '8'
     ] as Array<string>,
     userAnswers: [] as Array<string>,
-    userGrades: 0
-
+    userGrades: 0,
+    isChosen: false
 }
 
 type InitialStateType = typeof initialState
@@ -54,6 +54,16 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
                 ...state,
                 userAnswers: [...state.userAnswers, action.answer]
             }
+        case 'GEOGRAPHY-TEST/TEST/CHOSE-ANSWER':
+            return {
+                ...state,
+                isChosen: true
+            }
+        case 'GEOGRAPHY-TEST/TEST/RESET-ANSWER' :
+            return {
+                ...state,
+                isChosen: false
+            }
         default:
             return {
                 ...state
@@ -65,7 +75,33 @@ type ActionsType = InferActionTypes<typeof TestReducerActions>
 
 export const TestReducerActions = {
     plusGrade: () => ({type: 'GEOGRAPHY-TEST/TEST/PLUS-GRADE'} as const),
-    addUserAnswer: (answer: string) => ({type: 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER', answer} as const)
+    addUserAnswer: (answer: string) => ({type: 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER', answer} as const),
+    choseAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/CHOSE-ANSWER'} as const),
+    resetAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-ANSWER'} as const)
+}
+
+export function plusGrade() {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.plusGrade())
+    }
+}
+
+export function addUserAnswer(answer: string) {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.addUserAnswer(answer))
+    }
+}
+
+export function choseAnswer() {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.choseAnswer())
+    }
+}
+
+export function resetAnswer() {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.resetAnswer())
+    }
 }
 
 export default testReducer
