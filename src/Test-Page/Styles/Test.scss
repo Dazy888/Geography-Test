@@ -55,7 +55,6 @@
 .top {
   align-items: baseline;
   width: fit-content;
-  height: 248px;
   margin: 0 auto 50px auto;
   border-bottom: 3px solid rgb(111, 224, 202);
 
@@ -123,7 +122,6 @@
       margin: auto;
 
       .top__row {
-        height: 50px;
         margin-bottom: 30px;
 
         .top__item {
@@ -166,7 +164,7 @@
 
 // Answers Block
 .content__answers {
-  width: 450px;
+  width: fit-content;
   display: grid;
   grid-template-areas:  'a b'
                             'c d';
@@ -191,8 +189,6 @@
   }
 
   .content__option {
-    width: 200px;
-    height: 100px;
     text-align: center;
 
     .content__letter {

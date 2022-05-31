@@ -93,8 +93,9 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
 
         testTimeTimer()
         window.onload = circleAnimation
+    }, [])
 
-
+    useEffect(() => {
         // Choose Answers
         const answersBlNode: any = answersBl.current
         function chooseAnswer(e: any) {

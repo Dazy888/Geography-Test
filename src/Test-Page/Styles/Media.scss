@@ -39,11 +39,6 @@
       }
   }
 
-  .grades-txt {
-    font-size: 40px !important;
-  }
-
-
   .content {
     .content__txt {
       font-size: 45px;
@@ -55,8 +50,6 @@
     grid-gap: 60px;
 
     .content__option {
-      width: fit-content;
-
       .content__letter {
         width: 80px;
         height: 80px;
@@ -88,7 +81,12 @@
     }
   }
 
-  .stats__finish-btn {
+  .content__finish-btn {
+    width: 350px !important;
+    height: 70px !important;
+    margin-top: 100px !important;
+    font-size: 35px !important;
+
     &:hover {
       transform: translateY(0) !important;
       box-shadow: 0 0 !important;
@@ -98,42 +96,81 @@
 
 @media screen and(max-width: 600px) {
   .content__letter_selected {
-    width: 86px !important;
-    height: 86px !important;
+    width: 126px !important;
+    height: 126px !important;
+  }
+
+  .top .top__current-question .top__rows .top__row .top__item_selected {
+    width: 81px !important;
+    height: 81px !important;
+  }
+
+  .clock-icon {
+    margin-bottom: 55px !important;
+  }
+
+  .top__rows {
+    width: 450px !important;
+    padding: 0 !important;
+
+    .top__item {
+      width: 75px !important;
+      height: 75px !important;
+
+      .num_icon {
+        font-size: 45px;
+      }
+    }
+  }
+
+  .clock-icon, .current-question-icon {
+    font-size: 60px !important;
   }
 
   .content {
+    .content__img {
+      width: 1050px;
+      height: 500px;
+    }
+
     .content__txt {
-      font-size: 55px;
+      font-size: 60px;
     }
   }
 
   // Answers Block
   .content__answers {
-    grid-gap: 120px;
+    grid-gap: 100px;
 
     .content__option {
       .content__letter {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
 
         .letter-icon {
-          font-size: 50px;
+          font-size: 60px;
         }
       }
 
       .answer-txt {
-        font-size: 40px;
+        font-size: 50px;
       }
     }
   }
 
   //  Next Button
   .content__next-btn {
-    margin-top: 140px;
+    margin-top: 160px;
 
     .next-icon {
-      font-size: 120px !important;
+      font-size: 140px !important;
     }
+  }
+
+  .content__finish-btn {
+    width: 400px !important;
+    height: 80px !important;
+    margin-top: 150px !important;
+    font-size: 40px !important;
   }
 }
