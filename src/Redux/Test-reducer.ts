@@ -34,23 +34,38 @@ let initialState = {
         '3',
         'Jupiter',
         '8'
-    ] as Array<string>
+    ] as Array<string>,
+    userAnswers: [] as Array<string>,
+    userGrades: 0
+
 }
 
 type InitialStateType = typeof initialState
 
-// @ts-ignore
 function testReducer(state = initialState, action: ActionsType): InitialStateType {
     switch (action.type) {
-        case 'geography-test/test/GET-QUESTION':
-
+        case 'GEOGRAPHY-TEST/TEST/PLUS-GRADE':
+            return {
+                ...state,
+                userGrades: state.userGrades + 1
+            }
+        case 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER':
+            return {
+                ...state,
+                userAnswers: [...state.userAnswers, action.answer]
+            }
+        default:
+            return {
+                ...state
+            }
     }
 }
 
 type ActionsType = InferActionTypes<typeof TestReducerActions>
 
 export const TestReducerActions = {
-    getQuestion: (questionNumber: number) => ({type: 'geography-test/test/GET-QUESTION', questionNumber})
+    plusGrade: () => ({type: 'GEOGRAPHY-TEST/TEST/PLUS-GRADE'} as const),
+    addUserAnswer: (answer: string) => ({type: 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER', answer} as const)
 }
 
 export default testReducer

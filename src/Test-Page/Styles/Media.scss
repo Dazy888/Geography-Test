@@ -95,3 +95,45 @@
     }
   }
 }
+
+@media screen and(max-width: 600px) {
+  .content__letter_selected {
+    width: 86px !important;
+    height: 86px !important;
+  }
+
+  .content {
+    .content__txt {
+      font-size: 55px;
+    }
+  }
+
+  // Answers Block
+  .content__answers {
+    grid-gap: 120px;
+
+    .content__option {
+      .content__letter {
+        width: 100px;
+        height: 100px;
+
+        .letter-icon {
+          font-size: 50px;
+        }
+      }
+
+      .answer-txt {
+        font-size: 40px;
+      }
+    }
+  }
+
+  //  Next Button
+  .content__next-btn {
+    margin-top: 140px;
+
+    .next-icon {
+      font-size: 120px !important;
+    }
+  }
+}
