@@ -5,6 +5,7 @@ import {AppStateType} from "../Redux/Redux-Store";
 import {getAnswers, getChosenStatus, getQuestions} from "../Redux/Test-selectors";
 import {addUserAnswer, choseAnswer, plusGrade, resetAnswer} from "../Redux/Test-reducer";
 import Content from "./Content";
+import {logDOM} from "@testing-library/react";
 
 let i = 0
 let currentQuestion = 1
@@ -32,26 +33,7 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
     const content: any = React.createRef()
 
     useEffect(() => {
-        // Choose Answers
-        const answersBlNode: any = answersBl.current
-
-        function chooseAnswer(e: any) {
-            if (e.target.closest('span') || e.target.tagName === 'SPAN' && !e.target.classList.contains('content__letter_selected')) {
-                choseAnswer()
-                const answers: any = answersBlNode.querySelectorAll('.content__letter_selected')
-                if (answers.length >= 1) {
-                    for (const answer of answers) {
-                        answer.classList.remove('content__letter_selected')
-                    }
-                }
-                e.target.closest('span').classList.toggle('content__letter_selected')
-            }
-        }
-
-        answersBlNode.onclick = chooseAnswer
-
         const nextBtnNode = nextBtn.current
-
         function sendAnswer() {
             if (!isChosen) return
             if (currentQuestion === 10) {
@@ -70,17 +52,24 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
             }
             currentQuestion++
 
+            console.log(true)
+            nextBtnNode.disabled = true
+
             setTimeout(() => {
                 const currentQuestionNumbers = rows.current.querySelectorAll('.top__item')
                 currentQuestionNumbers[i + 1].classList.add('top__item_selected')
             }, 600)
 
             setTimeout(() => {
-                const chosenAnswer: any = answersBlNode.querySelector('.content__letter_selected')
+                const chosenAnswer: any = answersBl.current.querySelector('.content__letter_selected')
                 chosenAnswer.classList.remove('content__letter_selected')
-                resetAnswer()
                 i++
+                resetAnswer()
             }, 800)
+
+            setTimeout(() => {
+                nextBtnNode.disabled = false
+            }, 900)
         }
 
         nextBtnNode.onclick = sendAnswer
@@ -89,7 +78,7 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
     return (
         <div id={'test-wrapper'}>
             <Test rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
-            <Content nextBtn={nextBtn} content={content} answersBl={answersBl}/>
+            <Content choseAnswer={choseAnswer} nextBtn={nextBtn} content={content} answersBl={answersBl}/>
         </div>
     )
 }

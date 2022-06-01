@@ -1,12 +1,29 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 type PropsType = {
     content: React.Ref<any>
-    answersBl: React.Ref<any>
+    answersBl: any
     nextBtn: React.Ref<any>
+    choseAnswer: () => void
 }
 
-function Content({nextBtn, content, answersBl}: PropsType) {
+function Content({nextBtn, content, answersBl, choseAnswer}: PropsType) {
+    useEffect(() => {
+        const answersBlNode: any = answersBl.current
+        function chooseAnswer(e: any) {
+            if (e.target.closest('span') || e.target.tagName === 'SPAN' && !e.target.classList.contains('content__letter_selected')) {
+                choseAnswer()
+                const answers: any = answersBlNode.querySelectorAll('.content__letter_selected')
+                if (answers.length >= 1) {
+                    for (const answer of answers) {
+                        answer.classList.remove('content__letter_selected')
+                    }
+                }
+                e.target.closest('span').classList.toggle('content__letter_selected')
+            }
+        }
+        answersBlNode.onclick = chooseAnswer
+    }, [])
     return (
         <div className="content" ref={content}>
             <div className="content__question">
