@@ -36,7 +36,7 @@ function Start() {
     }
 
     return (
-        <div id="wrapper" className="flex-property-set" ref={wrapper}>
+        <div id="start-wrapper" className="flex-property-set" ref={wrapper}>
             <div className="welcome flex-property-set" ref={welcome}>
                 <div className="welcome__content">
                     <p className="welcome__txt">Welcome : Do you want to start taking the test?</p>

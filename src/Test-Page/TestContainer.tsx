@@ -1,9 +1,10 @@
-import Test from "./Test";
+import Test from "./Stats";
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
 import {getAnswers, getChosenStatus, getQuestions} from "../Redux/Test-selectors";
 import {addUserAnswer, choseAnswer, plusGrade, resetAnswer} from "../Redux/Test-reducer";
+import Content from "./Content";
 
 let i = 0
 let currentQuestion = 1
@@ -19,85 +20,21 @@ type PropsType = {
 }
 
 function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
+    // Stats Refs
     const circle: any = React.createRef()
     const minTxt: any = React.createRef()
     const secTxt: any = React.createRef()
     const msTxt: any = React.createRef()
+    // Content Refs
     const answersBl: any = React.createRef()
     const rows: any = React.createRef()
     const nextBtn: any = React.createRef()
     const content: any = React.createRef()
 
     useEffect(() => {
-        const circleNode: any = circle.current
-        const minTxtNode: any = minTxt.current
-        const secTxtNode: any = secTxt.current
-        const msTxtNode: any = msTxt.current
-
-        function circleAnimation() {
-            const circumference = 2 * Math.PI * circleNode.r.baseVal.value
-            circleNode.style.strokeDasharray = `${circumference} ${circumference}`
-            circleNode.style.strokeDashoffset = circumference
-
-            function setProgress(percent: number) {
-                circleNode.style.strokeDashoffset = circumference - percent / 100 * circumference
-            }
-
-            let c = 100;
-            setProgress(c)
-
-            function circleInterval() {
-                if (c < 0) {
-                    c = 0
-                    setProgress(c)
-                    clearInterval(progressInt)
-                    return
-                }
-                setProgress(c)
-                c = c - 0.33
-            }
-
-            const progressInt = setInterval(circleInterval, 1000)
-        }
-
-        function testTimeTimer() {
-            let min = 4
-            let sec = 59
-            let ms = 0
-            secTxtNode.innerText = sec
-
-            function timeInterval() {
-                if (min === -1 && sec === 60) clearInterval(interval)
-
-                if (ms > 1) {
-                    ms--
-                    msTxtNode.innerText = ms
-                } else {
-                    ms = 99
-                    sec--
-                    secTxtNode.innerText = sec
-                }
-
-                if (ms < 10) msTxtNode.innerText = '0' + ms
-                if (sec < 10) secTxtNode.innerText = '0' + sec
-
-                if (sec === 0 && ms === 1) {
-                    sec = 60
-                    min--
-                    minTxtNode.innerText = min
-                }
-            }
-
-            const interval = setInterval(timeInterval, 10)
-        }
-
-        testTimeTimer()
-        window.onload = circleAnimation
-    }, [])
-
-    useEffect(() => {
         // Choose Answers
         const answersBlNode: any = answersBl.current
+
         function chooseAnswer(e: any) {
             if (e.target.closest('span') || e.target.tagName === 'SPAN' && !e.target.classList.contains('content__letter_selected')) {
                 choseAnswer()
@@ -110,6 +47,7 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
                 e.target.closest('span').classList.toggle('content__letter_selected')
             }
         }
+
         answersBlNode.onclick = chooseAnswer
 
         const nextBtnNode = nextBtn.current
@@ -144,10 +82,16 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
                 i++
             }, 800)
         }
+
         nextBtnNode.onclick = sendAnswer
     }, [isChosen])
 
-    return <Test content={content} nextBtn={nextBtn} rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt} answersBl={answersBl} />
+    return (
+        <div id={'test-wrapper'}>
+            <Test rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
+            <Content nextBtn={nextBtn} content={content} answersBl={answersBl}/>
+        </div>
+    )
 }
 
 function mapStateToProps(state: AppStateType) {
