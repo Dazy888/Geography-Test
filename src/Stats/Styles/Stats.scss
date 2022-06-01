@@ -1,0 +1,194 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+// Main Styles
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#stats-wrapper {
+  min-height: 100vh;
+  padding-top: 100px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-property-set {
+  display: flex;
+  align-items: center;
+}
+
+.question-number_1 {
+  &:before {
+    content: '1';
+  }
+}
+
+.question-number_2 {
+  &:before {
+    content: '2';
+  }
+}
+
+.question-number_3 {
+  &:before {
+    content: '3';
+  }
+}
+
+.question-number_4 {
+  &:before {
+    content: '4';
+  }
+}
+
+.question-number_5 {
+  &:before {
+    content: '5';
+  }
+}
+
+.question-number_6 {
+  &:before {
+    content: '6';
+  }
+}
+
+.question-number_7 {
+  &:before {
+    content: '7';
+  }
+}
+
+.question-number_8 {
+  &:before {
+    content: '8';
+  }
+}
+
+.question-number_9 {
+  &:before {
+    content: '9';
+  }
+}
+
+.question-number_10 {
+  &:before {
+    content: '10';
+  }
+}
+
+// Text Block
+.gratitude {
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  background-color: rgb(111, 224, 202);
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  text-align: center;
+
+  .gratitude__txt {
+    font-size: 30px;
+    margin: 20px;
+  }
+}
+
+// Answers
+.answers {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  text-align: center;
+
+  .answers__row {
+    margin-top: 160px;
+    text-align: center;
+
+    .answers__question {
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+
+    .answers__content {
+      width: fit-content;
+      justify-content: space-between;
+      border: 3px solid rgb(111, 224, 202);
+      padding: 40px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        left: -70px;
+        font-size: 40px;
+      }
+    }
+
+    .answers__bl {
+      width: 250px;
+      text-align: center;
+      box-sizing: border-box;
+
+      .letter {
+        font-size: 25px;
+      }
+
+      span {
+        justify-content: center;
+        width: 56px !important;
+        height: 56px !important;
+        border-radius: 50%;
+        margin: auto;
+      }
+
+      .round {
+        width: 50px !important;
+        height: 50px !important;
+        border: 3px solid rgb(255, 94, 149);
+      }
+
+      p {
+        display: block;
+        font-size: 25px;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+// Restart Button
+.restart-btn {
+  display: block;
+  width: 250px;
+  height: 50px;
+  margin: 100px auto;
+  background-color: rgb(255, 94, 149);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s, box-shadow 0.5s;
+
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+
+  &:hover {
+    transform: translateY(-30px);
+    box-shadow: 0 10px 10px 0 rgb(111, 224, 202);
+  }
+}
+
+@media screen and(max-width: 1250px) {
+  .restart-btn {
+    &:hover {
+      transform: translateY(0);
+      box-shadow: 0 0;
+    }
+  }
+
+  .answers__content {
+    width: 700px !important;
+    margin: auto;
+  }
+}
