@@ -5,18 +5,13 @@
 }
 
 #stats-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
   min-height: 100vh;
   padding-top: 100px;
   font-family: "Roboto", sans-serif;
-}
-
-.flex-property-set {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .question-number_1:before {
@@ -61,24 +56,24 @@
 
 .gratitude {
   width: 500px;
-  height: 100px;
   margin: auto;
   background-color: rgb(111, 224, 202);
   border-radius: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding-top: 15px;
+  padding: 15px;
   text-align: center;
 }
 .gratitude .gratitude__txt {
   font-size: 30px;
   margin: 20px;
 }
+.gratitude .gratitude__grades {
+  font-size: 25px;
+  margin: 20px;
+}
 
 .answers {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   margin: auto;
   position: relative;
   text-align: center;
@@ -92,34 +87,45 @@
   font-size: 30px;
 }
 .answers .answers__row .answers__content {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 230px;
   border: 3px solid rgb(111, 224, 202);
-  padding: 40px;
+  padding: 20px;
   position: relative;
 }
 .answers .answers__row .answers__content:before {
   position: absolute;
+  top: 105px;
   left: -70px;
   font-size: 40px;
 }
 .answers .answers__row .answers__bl {
-  width: 250px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 .answers .answers__row .answers__bl .letter {
   font-size: 25px;
 }
 .answers .answers__row .answers__bl span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 56px !important;
   height: 56px !important;
   border-radius: 50%;
@@ -129,6 +135,11 @@
   width: 50px !important;
   height: 50px !important;
   border: 3px solid rgb(255, 94, 149);
+}
+.answers .answers__row .answers__bl .round-user {
+  width: 50px !important;
+  height: 50px !important;
+  border: 3px solid rgb(111, 224, 202);
 }
 .answers .answers__row .answers__bl p {
   display: block;

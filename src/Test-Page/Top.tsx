@@ -10,7 +10,7 @@ type PropsType = {
     rows: any
 }
 
-function Stats({circle, sec, min, ms, rows}: PropsType) {
+function Top({circle, sec, min, ms, rows}: PropsType) {
     useEffect(() => {
         const circleNode: any = circle.current
         const minNode: any = min.current
@@ -129,4 +129,4 @@ function Stats({circle, sec, min, ms, rows}: PropsType) {
     )
 }
 
-export default Stats
+export default Top

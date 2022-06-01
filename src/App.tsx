@@ -4,6 +4,7 @@ import Start from "./Start-Page/Start";
 import {Provider} from "react-redux";
 import store from "./Redux/Redux-Store";
 import TestContainer from "./Test-Page/TestContainer";
+import StatsContainer from "./Stats/Stats-Container";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Start/>}/>
                     <Route path="/test" element={<TestContainer/>}/>
-                    <Route path="/stats" element={<TestContainer />}/>
+                    <Route path="/stats" element={<StatsContainer />}/>
                 </Routes>
             </Provider>
         </BrowserRouter>

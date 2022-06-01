@@ -1,10 +1,11 @@
-import Test from "./Stats";
+import Test from "./Top";
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
 import {getAnswers, getChosenStatus, getPhotographs, getQuestions, getTrueAnswers} from "../Redux/Test-selectors";
 import {addUserAnswer, choseAnswer, plusGrade, resetAnswer} from "../Redux/Test-reducer";
 import Content from "./Content";
+import {Navigate, useNavigate} from "react-router-dom";
 
 let i = 0
 let currentQuestion = 1
@@ -22,7 +23,7 @@ type PropsType = {
 }
 
 function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
-    // Stats Refs
+    // Top Refs
     const circle: any = React.createRef()
     const minTxt: any = React.createRef()
     const secTxt: any = React.createRef()
@@ -35,6 +36,8 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
     const img: any = React.createRef()
     const question: any = React.createRef()
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         const nextBtnNode = nextBtn.current
         function sendAnswer() {
@@ -43,6 +46,7 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
                 const finishBtn: any = document.createElement('button')
                 finishBtn.classList.add('content__finish-btn')
                 finishBtn.innerText = 'Finish Test'
+                finishBtn.onclick = navigate('/stats')
                 nextBtnNode.style.opacity = '0'
                 setTimeout(() => {
                     nextBtnNode.remove()
