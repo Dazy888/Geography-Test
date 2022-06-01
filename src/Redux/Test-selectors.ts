@@ -19,3 +19,11 @@ export function getUserAnswers(state: AppStateType) {
 export function getChosenStatus(state: AppStateType) {
     return state.isChosen
 }
+
+export function getPhotographs(state: AppStateType) {
+    return state.photographs
+}
+
+export function getTrueAnswers(state: AppStateType) {
+    return state.trueAnswers
+}

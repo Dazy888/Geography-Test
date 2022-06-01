@@ -5,9 +5,14 @@ type PropsType = {
     answersBl: any
     nextBtn: React.Ref<any>
     choseAnswer: () => void
+    photo: string
+    img: React.Ref<any>
+    question: React.Ref<any>
+    questionTxt: string
+    answers: Array<string>
 }
 
-function Content({nextBtn, content, answersBl, choseAnswer}: PropsType) {
+function Content({answers, questionTxt, question, img, photo, nextBtn, content, answersBl, choseAnswer}: PropsType) {
     useEffect(() => {
         const answersBlNode: any = answersBl.current
         function chooseAnswer(e: any) {
@@ -27,32 +32,32 @@ function Content({nextBtn, content, answersBl, choseAnswer}: PropsType) {
     return (
         <div className="content" ref={content}>
             <div className="content__question">
-                <p className="content__txt">What country is the biggest in Europe?</p>
-                <img src="./Photos/question-1-img.png" className="content__img" alt={'Hello'}/>
+                <p className="content__txt" ref={question}>{questionTxt}</p>
+                <img ref={img} src={photo} className="content__img" alt={'Hello'}/>
             </div>
             <div className="content__answers" ref={answersBl}>
                 <div className="content__option a">
                             <span className="content__letter flex-property-set_center"> <i
                                 className="fa-solid fa-a letter-icon"></i> </span>
-                    <p className="answer-txt">France</p>
+                    <p className="answer-txt">{answers[0]}</p>
                 </div>
 
                 <div className="content__option b">
                             <span className="content__letter flex-property-set_center"> <i
                                 className="fa-solid fa-b letter-icon"></i> </span>
-                    <p className="answer-txt">Ukraine</p>
+                    <p className="answer-txt">{answers[1]}</p>
                 </div>
 
                 <div className="content__option c">
                             <span className="content__letter flex-property-set_center"> <i
                                 className="fa-solid fa-c letter-icon"></i> </span>
-                    <p className="answer-txt">Germany</p>
+                    <p className="answer-txt">{answers[2]}</p>
                 </div>
 
                 <div className="content__option d">
                             <span className="content__letter flex-property-set_center"> <i
                                 className="fa-solid fa-d letter-icon"></i> </span>
-                    <p className="answer-txt">Polish</p>
+                    <p className="answer-txt">{answers[3]}</p>
                 </div>
             </div>
             <button className="content__next-btn" ref={nextBtn}><i className="fa-regular fa-circle-right next-icon"></i></button>

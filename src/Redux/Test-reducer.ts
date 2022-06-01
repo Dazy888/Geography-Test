@@ -2,6 +2,7 @@ import {InferActionTypes} from "./Redux-Store";
 
 let initialState = {
     questions: [
+        'What country is the biggest in Europe?',
         'What lake is the biggest in Europe',
         'What mountain is the biggest in Europe',
         'What river is the longest in Europe',
@@ -13,14 +14,15 @@ let initialState = {
         'How many planets are in the solar system',
     ] as Array<string>,
     answers: [
-        ['Caspian Sea', 'Onega', 'Vänern', 'Ladoga'],
-        ['Elbrus', 'Shkhara', 'Koshtan-Tau', 'Mont Blanc'],
-        ['Ural', 'Volga', 'Dnipro', 'Belaya'],
+        ['France', 'Ukraine', 'Germany', 'Polish'],
+        ['Caspian Sea', 'Onega', 'Vanern', 'Ladoga'],
+        ['Elbrus', 'Shikhar', 'Konstan-Tau', 'Mont Blanc'],
+        ['Ural', 'Volga', 'Dynpro', 'Belay'],
         ['Madagascar', 'New Guinea', 'Borneo', 'Greenland'],
         ['4', '7', '3', '5'],
         ['3', '5', '9', '6'],
         ['2', '5', '4', '3'],
-        ['Jupiter', 'Saturn', 'Mars', 'Neptun'],
+        ['Jupiter', 'Saturn', 'Mars', 'Neptune'],
         ['6', '8', '5', '7'],
     ] as Array<Array<string>>,
     trueAnswers: [
@@ -34,6 +36,18 @@ let initialState = {
         '3',
         'Jupiter',
         '8'
+    ] as Array<string>,
+    photographs: [
+        './Photos/question-1-img.png',
+        './Photos/question-2-img.jpg',
+        './Photos/question-3-img.jpg',
+        './Photos/question-4-img.jpg',
+        './Photos/question-5-img.jpg',
+        './Photos/question-6-img.jpg',
+        './Photos/question-7-img.jpg',
+        './Photos/question-8-img.jpg',
+        './Photos/question-9-img.jpg',
+        './Photos/question-10-img.jpg',
     ] as Array<string>,
     userAnswers: [] as Array<string>,
     userGrades: 0,

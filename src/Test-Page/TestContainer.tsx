@@ -2,10 +2,9 @@ import Test from "./Stats";
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
-import {getAnswers, getChosenStatus, getQuestions} from "../Redux/Test-selectors";
+import {getAnswers, getChosenStatus, getPhotographs, getQuestions, getTrueAnswers} from "../Redux/Test-selectors";
 import {addUserAnswer, choseAnswer, plusGrade, resetAnswer} from "../Redux/Test-reducer";
 import Content from "./Content";
-import {logDOM} from "@testing-library/react";
 
 let i = 0
 let currentQuestion = 1
@@ -18,19 +17,23 @@ type PropsType = {
     answers: Array<Array<string>>
     isChosen: boolean
     resetAnswer: () => void
+    photographs: Array<string>
+    trueAnswers: Array<string>
 }
 
-function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
+function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
     // Stats Refs
     const circle: any = React.createRef()
     const minTxt: any = React.createRef()
     const secTxt: any = React.createRef()
     const msTxt: any = React.createRef()
-    // Content Refs
-    const answersBl: any = React.createRef()
     const rows: any = React.createRef()
-    const nextBtn: any = React.createRef()
+    // Content Refs
     const content: any = React.createRef()
+    const answersBl: any = React.createRef()
+    const nextBtn: any = React.createRef()
+    const img: any = React.createRef()
+    const question: any = React.createRef()
 
     useEffect(() => {
         const nextBtnNode = nextBtn.current
@@ -51,9 +54,33 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
                 return
             }
             currentQuestion++
-
-            console.log(true)
             nextBtnNode.disabled = true
+
+            const imgNode = img.current
+            imgNode.style.filter = 'blur(20px)'
+            setTimeout(() => {
+                imgNode.style.filter = ''
+            }, 700)
+
+            const questionNode = question.current
+            questionNode.classList.add('animation')
+            setTimeout(() => {
+                questionNode.classList.remove('animation')
+                questionNode.innerText = questions[i]
+                for (const answer of answersArr) {
+                    answer.classList.remove('animation')
+                }
+            }, 600)
+
+            const answersArr: any = answersBl.current.querySelectorAll('.answer-txt')
+            for (const answer of answersArr) {
+                answer.classList.add('animation')
+            }
+
+            const userAnswer = answersBl.current.querySelector('.content__letter_selected').nextElementSibling.innerText
+
+            if (userAnswer === trueAnswers[i]) plusGrade()
+            addUserAnswer(userAnswer)
 
             setTimeout(() => {
                 const currentQuestionNumbers = rows.current.querySelectorAll('.top__item')
@@ -78,7 +105,7 @@ function TestContainer({resetAnswer, plusGrade, addUserAnswer, choseAnswer, ques
     return (
         <div id={'test-wrapper'}>
             <Test rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
-            <Content choseAnswer={choseAnswer} nextBtn={nextBtn} content={content} answersBl={answersBl}/>
+            <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img} photo={photographs[i]} choseAnswer={choseAnswer} nextBtn={nextBtn} content={content} answersBl={answersBl}/>
         </div>
     )
 }
@@ -87,7 +114,9 @@ function mapStateToProps(state: AppStateType) {
     return {
         questions: getQuestions(state),
         answers: getAnswers(state),
-        isChosen: getChosenStatus(state)
+        isChosen: getChosenStatus(state),
+        photographs: getPhotographs(state),
+        trueAnswers: getTrueAnswers(state)
     }
 }
 
