@@ -18,7 +18,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
             <div className="answers" ref={answersBl}>
                 <div className={'answers__row'}>
                     <p className="answers__question">What country is the biggest in Europe</p>
-                    <div className="answers__content question-number_1">
+                    <p className={'answers__number'}>1</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">France</p>
@@ -43,7 +44,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What lake is the biggest in Europe</p>
-                    <div className="answers__content question-number_2">
+                    <p className={'answers__number'}>2</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className="round"> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">Caspian Sea</p>
@@ -56,7 +58,7 @@ function Stats({restart, grades, answersBl}: PropsType) {
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-c letter"></i> </span>
-                            <p className="answers__txt answer">Vänern</p>
+                            <p className="answers__txt answer">Vanern</p>
                             <p className="answers__txt">5.650 km²</p>
                         </div>
                         <div className="answers__bl">
@@ -68,7 +70,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What mountain is the biggest in Europe</p>
-                    <div className="answers__content question-number_3">
+                    <p className={'answers__number'}>3</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className="round"> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">Elbrus</p>
@@ -76,12 +79,12 @@ function Stats({restart, grades, answersBl}: PropsType) {
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-b letter"></i> </span>
-                            <p className="answers__txt answer">Shkhara</p>
+                            <p className="answers__txt answer">Shikhar</p>
                             <p className="answers__txt">5.193 m</p>
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-c letter"></i> </span>
-                            <p className="answers__txt answer">Koshtan-Tau</p>
+                            <p className="answers__txt answer">Konstan-Tau</p>
                             <p className="answers__txt">5.144 m</p>
                         </div>
                         <div className="answers__bl">
@@ -93,7 +96,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What river is the longest in Europe</p>
-                    <div className="answers__content question-number_4">
+                    <p className={'answers__number'}>4</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">Ural</p>
@@ -106,19 +110,20 @@ function Stats({restart, grades, answersBl}: PropsType) {
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-c letter"></i> </span>
-                            <p className="answers__txt answer">Dnipro</p>
+                            <p className="answers__txt answer">Dynpro</p>
                             <p className="answers__txt">2.201 km</p>
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-d letter"></i> </span>
-                            <p className="answers__txt answer">Belaya</p>
+                            <p className="answers__txt answer">Belay</p>
                             <p className="answers__txt">1.430 km</p>
                         </div>
                     </div>
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What island is the biggest in the world</p>
-                    <div className="answers__content question-number_5">
+                    <p className={'answers__number'}>5</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">Madagascar</p>
@@ -143,7 +148,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">How many oceans are on the planet</p>
-                    <div className="answers__content question-number_6">
+                    <p className={'answers__number'}>6</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">4</p>
@@ -164,7 +170,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">How many mainlands are on the planet</p>
-                    <div className="answers__content question-number_7">
+                    <p className={'answers__number'}>7</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">3</p>
@@ -185,7 +192,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What is the account of the earth from the sun</p>
-                    <div className="answers__content question-number_8">
+                    <p className={'answers__number'}>8</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">2</p>
@@ -205,7 +213,8 @@ function Stats({restart, grades, answersBl}: PropsType) {
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">What is the biggest planet in the solar system</p>
-                    <div className="answers__content question-number_9">
+                    <p className={'answers__number'}>9</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span className="round"> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">Jupiter</p>
@@ -223,14 +232,15 @@ function Stats({restart, grades, answersBl}: PropsType) {
                         </div>
                         <div className="answers__bl">
                             <span className={'answers__letter'}> <i className="fa-solid fa-d letter"></i> </span>
-                            <p className="answers__txt answer">Neptun</p>
+                            <p className="answers__txt answer">Neptune</p>
                             <p className="answers__txt">24.622 km</p>
                         </div>
                     </div>
                 </div>
                 <div className="answers__row">
                     <p className="answers__question">How many planets are in the solar system</p>
-                    <div className="answers__content question-number_10">
+                    <p className={'answers__number'}>10</p>
+                    <div className="answers__content">
                         <div className="answers__bl">
                             <span> <i className="fa-solid fa-a letter"></i> </span>
                             <p className="answers__txt answer">6</p>

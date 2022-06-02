@@ -15,66 +15,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.question-number_1 {
-  &:before {
-    content: '1';
-  }
-}
-
-.question-number_2 {
-  &:before {
-    content: '2';
-  }
-}
-
-.question-number_3 {
-  &:before {
-    content: '3';
-  }
-}
-
-.question-number_4 {
-  &:before {
-    content: '4';
-  }
-}
-
-.question-number_5 {
-  &:before {
-    content: '5';
-  }
-}
-
-.question-number_6 {
-  &:before {
-    content: '6';
-  }
-}
-
-.question-number_7 {
-  &:before {
-    content: '7';
-  }
-}
-
-.question-number_8 {
-  &:before {
-    content: '8';
-  }
-}
-
-.question-number_9 {
-  &:before {
-    content: '9';
-  }
-}
-
-.question-number_10 {
-  &:before {
-    content: '10';
-  }
-}
-
 // Text Block
 .gratitude {
   width: 500px;
@@ -107,7 +47,12 @@
     text-align: center;
 
     .answers__question {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .answers__number {
+      margin-bottom: 20px;
       font-size: 30px;
     }
 
@@ -118,14 +63,6 @@
       height: 230px;
       border: 3px solid rgb(111, 224, 202);
       padding: 20px;
-      position: relative;
-
-      &:before {
-        position: absolute;
-        top: 105px;
-        left: -70px;
-        font-size: 40px;
-      }
     }
 
     .answers__bl {
@@ -196,9 +133,66 @@
       box-shadow: 0 0;
     }
   }
+}
 
+@media screen and(max-width: 950px) {
   .answers__content {
-    width: 700px !important;
-    margin: auto;
+    height: 180px !important;
+  }
+
+  .letter {
+    font-size: 20px !important;
+  }
+
+  .answers .answers__row .answers__bl span {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .answers .answers__row .answers__bl .round {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .answers .answers__row .answers__bl .round-user {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .answers__bl {
+    p {
+      font-size: 20px !important;
+    }
   }
 }
+
+//@media screen and(max-width: 750px) {
+//  .answers__content {
+//    height: 150px !important;
+//  }
+//
+//  .letter {
+//    font-size: 15px !important;
+//  }
+//
+//  .answers .answers__row .answers__bl span {
+//    width: 36px !important;
+//    height: 36px !important;
+//  }
+//
+//  .answers .answers__row .answers__bl .round {
+//    width: 30px !important;
+//    height: 30px !important;
+//  }
+//
+//  .answers .answers__row .answers__bl .round-user {
+//    width: 30px !important;
+//    height: 30px !important;
+//  }
+//
+//  .answers__bl {
+//    p {
+//      font-size: 15px !important;
+//    }
+//  }
+//}
