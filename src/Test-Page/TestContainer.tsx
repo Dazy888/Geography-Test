@@ -3,9 +3,17 @@ import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
 import {getAnswers, getChosenStatus, getPhotographs, getQuestions, getTrueAnswers} from "../Redux/Test-selectors";
-import {addUserAnswer, choseAnswer, plusGrade, resetAnswer} from "../Redux/Test-reducer";
+import {
+    addUserAnswer,
+    choseAnswer,
+    plusGrade,
+    resetAnswer,
+    setAverageAnswerTime,
+    setWastedTime
+} from "../Redux/Test-reducer";
 import Content from "./Content";
 import {Navigate, useNavigate} from "react-router-dom";
+import Top from "./Top";
 
 let i = 0
 let currentQuestion = 1
@@ -22,8 +30,19 @@ type PropsType = {
     trueAnswers: Array<string>
 }
 
-function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
+function TestContainer({
+                           trueAnswers,
+                           photographs,
+                           resetAnswer,
+                           plusGrade,
+                           addUserAnswer,
+                           choseAnswer,
+                           questions,
+                           answers,
+                           isChosen
+                       }: PropsType) {
     // Top Refs
+    const timeBl: any = React.createRef()
     const circle: any = React.createRef()
     const minTxt: any = React.createRef()
     const secTxt: any = React.createRef()
@@ -41,10 +60,13 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
     useEffect(() => {
         const nextBtnNode = nextBtn.current
         function finishTest() {
+            setWastedTime(300 - (Number(minTxt.current.innerText) * 60 + Number(secTxt.current.innerText)))
+            setAverageAnswerTime((300 - (Number(minTxt.current.innerText) * 60 + Number(secTxt.current.innerText))) / 10)
             i = 0
             currentQuestion = 1
             navigate('/stats')
         }
+
         function sendAnswer() {
             if (!isChosen) return
             if (currentQuestion === 10) {
@@ -113,8 +135,10 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
 
     return (
         <div id={'test-wrapper'}>
-            <Test rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
-            <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img} photo={photographs[i]} choseAnswer={choseAnswer} nextBtn={nextBtn} content={content} answersBl={answersBl}/>
+            <Top timeBl={timeBl} rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
+            <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img}
+                     photo={photographs[i]} choseAnswer={choseAnswer} nextBtn={nextBtn} content={content}
+                     answersBl={answersBl}/>
         </div>
     )
 }
@@ -129,5 +153,12 @@ function mapStateToProps(state: AppStateType) {
     }
 }
 
-const TestContainerComponent = connect(mapStateToProps, {plusGrade, addUserAnswer, choseAnswer, resetAnswer})(TestContainer)
+const TestContainerComponent = connect(mapStateToProps, {
+    plusGrade,
+    addUserAnswer,
+    choseAnswer,
+    resetAnswer,
+    setWastedTime,
+    setAverageAnswerTime
+})(TestContainer)
 export default TestContainerComponent

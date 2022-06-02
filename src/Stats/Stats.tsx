@@ -5,15 +5,18 @@ type PropsType = {
     grades: number
     answersBl: React.Ref<any>
     restart: React.Ref<any>
+    wastedTime: number
+    averageAnswerTime: number
 }
 
-function Stats({restart, grades, answersBl}: PropsType) {
+function Stats({wastedTime, averageAnswerTime, restart, grades, answersBl}: PropsType) {
     return (
         <div id={'stats-wrapper'}>
             <div className="gratitude">
                 <p className="gratitude__txt">Thanks for passing the test</p>
-                <p className={'gratitude__grades'}>You earned <span className={'grades'}>{grades}</span> of 10 grades
-                </p>
+                <p className={'gratitude__grades'}>You earned <span className={'grades'}>{grades}</span> of 10 grades</p>
+                <p className={'gratitude__wasted-time'}>For passing the test you wasted {wastedTime} seconds</p>
+                <p className={'gratitude__average-answer-time'}>On average, it took you {averageAnswerTime} seconds to answer</p>
             </div>
             <div className="answers" ref={answersBl}>
                 <div className={'answers__row'}>

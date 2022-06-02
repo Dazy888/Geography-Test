@@ -51,7 +51,9 @@ let initialState = {
     ] as Array<string>,
     userAnswers: [] as Array<string>,
     grades: 0,
-    isChosen: false
+    isChosen: false,
+    wastedTime: 0,
+    averageAnswerTime: 0
 }
 
 type InitialStateType = typeof initialState
@@ -88,6 +90,16 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
                 ...state,
                 userAnswers: []
             }
+        case 'GEOGRAPHY-TEST/TEST/SET-WASTED-TIME' :
+            return {
+                ...state,
+                wastedTime: action.time
+            }
+        case 'GEOGRAPHY-TEST/TEST/SET-AVERAGE-ANSWER-TIME':
+            return {
+                ...state,
+                averageAnswerTime: action.time
+            }
         default:
             return {
                 ...state
@@ -103,7 +115,9 @@ export const TestReducerActions = {
     choseAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/CHOSE-ANSWER'} as const),
     resetAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-ANSWER'} as const),
     resetGrades: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-GRADES'} as const),
-    resetUserAnswers: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-USER-ANSWERS'} as const)
+    resetUserAnswers: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-USER-ANSWERS'} as const),
+    setWastedTime: (time: number) => ({type: 'GEOGRAPHY-TEST/TEST/SET-WASTED-TIME', time} as const),
+    setAverageAnswerTime: (time: number) => ({type: 'GEOGRAPHY-TEST/TEST/SET-AVERAGE-ANSWER-TIME', time} as const)
 }
 
 export function plusGrade() {
@@ -139,6 +153,18 @@ export function resetGrades() {
 export function resetUserAnswers() {
     return (dispatch: any) => {
         dispatch(TestReducerActions.resetUserAnswers())
+    }
+}
+
+export function setWastedTime(time: number) {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.setWastedTime(time))
+    }
+}
+
+export function setAverageAnswerTime(time: number) {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.setAverageAnswerTime(time))
     }
 }
 

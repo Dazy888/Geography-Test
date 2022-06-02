@@ -17,7 +17,6 @@
 
 // Text Block
 .gratitude {
-  width: 500px;
   margin: auto;
   background-color: rgb(111, 224, 202);
   border-radius: 15px;
@@ -25,15 +24,15 @@
   padding: 15px;
   text-align: center;
 
-  .gratitude__txt {
-    font-size: 30px;
-    margin: 20px;
-  }
-
-  .gratitude__grades {
+  p {
+    &:first-child {
+      font-size: 30px;
+      margin: 20px;
+    }
     font-size: 25px;
     margin: 20px;
   }
+
 }
 
 // Answers

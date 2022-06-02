@@ -1,7 +1,7 @@
 import Stats from "./Stats";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
-import {getGrades, getUserAnswers} from "../Redux/Test-selectors";
+import {getAverageAnswerTime, getGrades, getUserAnswers, getWastedTime} from "../Redux/Test-selectors";
 import React, {useEffect} from "react";
 import {resetGrades, resetUserAnswers} from "../Redux/Test-reducer";
 import {useNavigate} from "react-router-dom";
@@ -11,8 +11,10 @@ type PropsType = {
     answers: Array<string>
     resetGrades: () => void
     resetUserAnswers: () => void
+    wastedTime: number
+    averageAnswerTime: number
 }
-function StatsContainer({resetUserAnswers, resetGrades, grades, answers}: PropsType) {
+function StatsContainer({wastedTime, averageAnswerTime, resetUserAnswers, resetGrades, grades, answers}: PropsType) {
     const answersBl: any = React.createRef()
     const restartBtn: any = React.createRef()
     const navigate = useNavigate()
@@ -31,18 +33,20 @@ function StatsContainer({resetUserAnswers, resetGrades, grades, answers}: PropsT
         function restart() {
             resetGrades()
             resetUserAnswers()
-            navigate('/test')
+            navigate('/start')
         }
 
         restartBtn.current.onclick = restart
     }, [])
-    return <Stats restart={restartBtn} answersBl={answersBl} grades={grades} />
+    return <Stats averageAnswerTime={averageAnswerTime} wastedTime={wastedTime} restart={restartBtn} answersBl={answersBl} grades={grades} />
 }
 
 function mapStateTpProps(state: AppStateType) {
     return {
         grades: getGrades(state),
-        answers: getUserAnswers(state)
+        answers: getUserAnswers(state),
+        wastedTime: getWastedTime(state),
+        averageAnswerTime: getAverageAnswerTime(state)
     }
 }
 

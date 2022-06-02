@@ -27,3 +27,11 @@ export function getPhotographs(state: AppStateType) {
 export function getTrueAnswers(state: AppStateType) {
     return state.trueAnswers
 }
+
+export function getWastedTime(state: AppStateType) {
+    return state.wastedTime
+}
+
+export function getAverageAnswerTime(state: AppStateType) {
+    return state.averageAnswerTime
+}

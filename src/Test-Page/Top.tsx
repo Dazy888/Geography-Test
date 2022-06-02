@@ -8,9 +8,10 @@ type PropsType = {
     min: any
     ms: any
     rows: any
+    timeBl: any
 }
 
-function Top({circle, sec, min, ms, rows}: PropsType) {
+function Top({timeBl, circle, sec, min, ms, rows}: PropsType) {
     useEffect(() => {
         const circleNode: any = circle.current
         const minNode: any = min.current
@@ -80,7 +81,7 @@ function Top({circle, sec, min, ms, rows}: PropsType) {
     return (
         <div className="container">
             <div className="top flex-property-set_between">
-                <div className="top__timer">
+                <div className="top__timer" ref={timeBl}>
                     <i className="fa-regular fa-clock clock-icon"></i>
                     <div className="top__svg">
                         <svg className="top__progress-ring" width="170" height="170">
