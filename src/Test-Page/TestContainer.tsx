@@ -1,18 +1,10 @@
-import Test from "./Top";
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
 import {getAnswers, getChosenStatus, getPhotographs, getQuestions, getTrueAnswers} from "../Redux/Test-selectors";
-import {
-    addUserAnswer,
-    choseAnswer,
-    plusGrade,
-    resetAnswer,
-    setAverageAnswerTime,
-    setWastedTime
-} from "../Redux/Test-reducer";
+import {addUserAnswer, choseAnswer, plusGrade, resetAnswer, setAverageAnswerTime, setWastedTime} from "../Redux/Test-reducer";
 import Content from "./Content";
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Top from "./Top";
 
 let i = 0
@@ -28,19 +20,11 @@ type PropsType = {
     resetAnswer: () => void
     photographs: Array<string>
     trueAnswers: Array<string>
+    setWastedTime: (time: number) => void
+    setAverageAnswerTime: (time: number) => void
 }
 
-function TestContainer({
-                           trueAnswers,
-                           photographs,
-                           resetAnswer,
-                           plusGrade,
-                           addUserAnswer,
-                           choseAnswer,
-                           questions,
-                           answers,
-                           isChosen
-                       }: PropsType) {
+function TestContainer({setWastedTime, setAverageAnswerTime, trueAnswers, photographs, resetAnswer, plusGrade, addUserAnswer, choseAnswer, questions, answers, isChosen}: PropsType) {
     // Top Refs
     const timeBl: any = React.createRef()
     const circle: any = React.createRef()
@@ -59,6 +43,7 @@ function TestContainer({
 
     useEffect(() => {
         const nextBtnNode = nextBtn.current
+
         function finishTest() {
             setWastedTime(300 - (Number(minTxt.current.innerText) * 60 + Number(secTxt.current.innerText)))
             setAverageAnswerTime((300 - (Number(minTxt.current.innerText) * 60 + Number(secTxt.current.innerText))) / 10)

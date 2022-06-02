@@ -10,6 +10,7 @@ type PropsType = {
 }
 
 function Stats({wastedTime, averageAnswerTime, restart, grades, answersBl}: PropsType) {
+    console.log(wastedTime, averageAnswerTime)
     return (
         <div id={'stats-wrapper'}>
             <div className="gratitude">
