@@ -40,13 +40,18 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
 
     useEffect(() => {
         const nextBtnNode = nextBtn.current
+        function finishTest() {
+            i = 0
+            currentQuestion = 1
+            navigate('/stats')
+        }
         function sendAnswer() {
             if (!isChosen) return
             if (currentQuestion === 10) {
                 const finishBtn: any = document.createElement('button')
                 finishBtn.classList.add('content__finish-btn')
                 finishBtn.innerText = 'Finish Test'
-                finishBtn.onclick = () => navigate('/stats')
+                finishBtn.onclick = finishTest
                 nextBtnNode.style.opacity = '0'
                 setTimeout(() => {
                     nextBtnNode.remove()
