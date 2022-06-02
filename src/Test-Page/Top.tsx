@@ -75,7 +75,7 @@ function Top({circle, sec, min, ms, rows}: PropsType) {
         }
 
         testTimeTimer()
-        window.onload = circleAnimation
+        circleAnimation()
     }, [])
     return (
         <div className="container">
