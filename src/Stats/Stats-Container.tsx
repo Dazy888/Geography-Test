@@ -33,7 +33,7 @@ function StatsContainer({wastedTime, averageAnswerTime, resetUserAnswers, resetG
         function restart() {
             resetGrades()
             resetUserAnswers()
-            navigate('/start')
+            navigate('/')
         }
 
         restartBtn.current.onclick = restart

@@ -91,7 +91,6 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
                 userAnswers: []
             }
         case 'GEOGRAPHY-TEST/TEST/SET-WASTED-TIME' :
-            console.log(action.time)
             return {
                 ...state,
                 wastedTime: action.time
@@ -158,7 +157,6 @@ export function resetUserAnswers() {
 }
 
 export function setWastedTime(time: number) {
-    console.log(time)
     return (dispatch: any) => {
         dispatch(TestReducerActions.setWastedTime(time))
     }
