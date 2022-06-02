@@ -121,9 +121,8 @@ function TestContainer({setWastedTime, setAverageAnswerTime, trueAnswers, photog
     return (
         <div id={'test-wrapper'}>
             <Top setWastedTime={setWastedTime} setAverageAnswerTime={setAverageAnswerTime} timeBl={timeBl} rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
-            <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img}
-                     photo={photographs[i]} choseAnswer={choseAnswer} nextBtn={nextBtn} content={content}
-                     answersBl={answersBl}/>
+            <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img} photo={photographs[i]}
+                     choseAnswer={choseAnswer} nextBtn={nextBtn} content={content} answersBl={answersBl}/>
         </div>
     )
 }
