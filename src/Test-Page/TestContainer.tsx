@@ -46,7 +46,7 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
                 const finishBtn: any = document.createElement('button')
                 finishBtn.classList.add('content__finish-btn')
                 finishBtn.innerText = 'Finish Test'
-                finishBtn.onclick = navigate('/stats')
+                finishBtn.onclick = () => navigate('/stats')
                 nextBtnNode.style.opacity = '0'
                 setTimeout(() => {
                     nextBtnNode.remove()
@@ -54,7 +54,7 @@ function TestContainer({trueAnswers, photographs, resetAnswer, plusGrade, addUse
                     setTimeout(() => {
                         finishBtn.style.opacity = '1'
                     }, 10)
-                })
+                }, 1000)
                 return
             }
             currentQuestion++
