@@ -54,6 +54,11 @@ function TestContainer({setWastedTime, setAverageAnswerTime, trueAnswers, photog
 
         function sendAnswer() {
             if (!isChosen) return
+
+            const userAnswer = answersBl.current.querySelector('.content__letter_selected').nextElementSibling.innerText
+            if (userAnswer === trueAnswers[i]) plusGrade()
+            addUserAnswer(userAnswer)
+
             if (currentQuestion === 10) {
                 const finishBtn: any = document.createElement('button')
                 finishBtn.classList.add('content__finish-btn')
@@ -93,11 +98,6 @@ function TestContainer({setWastedTime, setAverageAnswerTime, trueAnswers, photog
                 answer.classList.add('animation')
             }
 
-            const userAnswer = answersBl.current.querySelector('.content__letter_selected').nextElementSibling.innerText
-
-            if (userAnswer === trueAnswers[i]) plusGrade()
-            addUserAnswer(userAnswer)
-
             setTimeout(() => {
                 const currentQuestionNumbers = rows.current.querySelectorAll('.top__item')
                 currentQuestionNumbers[i + 1].classList.add('top__item_selected')
@@ -120,7 +120,7 @@ function TestContainer({setWastedTime, setAverageAnswerTime, trueAnswers, photog
 
     return (
         <div id={'test-wrapper'}>
-            <Top timeBl={timeBl} rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
+            <Top setWastedTime={setWastedTime} setAverageAnswerTime={setAverageAnswerTime} timeBl={timeBl} rows={rows} circle={circle} min={minTxt} sec={secTxt} ms={msTxt}/>
             <Content answers={answers[i]} questionTxt={questions[i]} question={question} img={img}
                      photo={photographs[i]} choseAnswer={choseAnswer} nextBtn={nextBtn} content={content}
                      answersBl={answersBl}/>
@@ -144,6 +144,6 @@ const TestContainerComponent = connect(mapStateToProps, {
     choseAnswer,
     resetAnswer,
     setWastedTime,
-    setAverageAnswerTime
+    setAverageAnswerTime,
 })(TestContainer)
 export default TestContainerComponent

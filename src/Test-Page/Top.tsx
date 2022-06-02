@@ -1,6 +1,7 @@
 import './Styles/Test.css'
 import './Styles/Media.css'
 import React, {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 type PropsType = {
     circle: any
@@ -9,9 +10,12 @@ type PropsType = {
     ms: any
     rows: any
     timeBl: any
+    setWastedTime: (time: number) => void
+    setAverageAnswerTime: (time: number) => void
 }
 
-function Top({timeBl, circle, sec, min, ms, rows}: PropsType) {
+function Top({setWastedTime, setAverageAnswerTime, timeBl, circle, sec, min, ms, rows}: PropsType) {
+    const navigate = useNavigate()
     useEffect(() => {
         const circleNode: any = circle.current
         const minNode: any = min.current
@@ -51,7 +55,12 @@ function Top({timeBl, circle, sec, min, ms, rows}: PropsType) {
             secNode.innerText = sec
 
             function timeInterval() {
-                if (min === -1 && sec === 60) clearInterval(interval)
+                if (min === 0 && sec === 0) {
+                    clearInterval(interval)
+                    setWastedTime(300 - (Number(minNode.innerText) * 60 + Number(secNode.innerText)))
+                    setAverageAnswerTime((300 - (Number(minNode.innerText) * 60 + Number(secNode.innerText))) / 10)
+                    navigate('/stats')
+                }
 
                 if (ms > 1) {
                     ms--

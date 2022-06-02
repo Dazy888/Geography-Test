@@ -14,7 +14,7 @@ let initialState = {
         'How many planets are in the solar system',
     ] as Array<string>,
     answers: [
-        ['France', 'Ukraine', 'Germany', 'Polish'],
+        ['France', 'Ukraine', 'Germany', 'Poland'],
         ['Caspian Sea', 'Onega', 'Vanern', 'Ladoga'],
         ['Elbrus', 'Shikhar', 'Konstan-Tau', 'Mont Blanc'],
         ['Ural', 'Volga', 'Dynpro', 'Belay'],
