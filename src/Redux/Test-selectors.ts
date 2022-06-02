@@ -9,7 +9,7 @@ export function getAnswers(state: AppStateType) {
 }
 
 export function getGrades(state: AppStateType) {
-    return state.userGrades
+    return state.grades
 }
 
 export function getUserAnswers(state: AppStateType) {

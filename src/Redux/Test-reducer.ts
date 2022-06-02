@@ -50,7 +50,7 @@ let initialState = {
         './Photos/question-10-img.jpg',
     ] as Array<string>,
     userAnswers: [] as Array<string>,
-    userGrades: 0,
+    grades: 0,
     isChosen: false
 }
 
@@ -61,7 +61,7 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
         case 'GEOGRAPHY-TEST/TEST/PLUS-GRADE':
             return {
                 ...state,
-                userGrades: state.userGrades + 1
+                grades: state.grades + 1
             }
         case 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER':
             return {
@@ -78,6 +78,16 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
                 ...state,
                 isChosen: false
             }
+        case 'GEOGRAPHY-TEST/TEST/RESET-GRADES':
+            return {
+                ...state,
+                grades: 0
+            }
+        case 'GEOGRAPHY-TEST/TEST/RESET-USER-ANSWERS':
+            return {
+                ...state,
+                userAnswers: []
+            }
         default:
             return {
                 ...state
@@ -91,7 +101,9 @@ export const TestReducerActions = {
     plusGrade: () => ({type: 'GEOGRAPHY-TEST/TEST/PLUS-GRADE'} as const),
     addUserAnswer: (answer: string) => ({type: 'GEOGRAPHY-TEST/TEST/ADD-USER-ANSWER', answer} as const),
     choseAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/CHOSE-ANSWER'} as const),
-    resetAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-ANSWER'} as const)
+    resetAnswer: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-ANSWER'} as const),
+    resetGrades: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-GRADES'} as const),
+    resetUserAnswers: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-USER-ANSWERS'} as const)
 }
 
 export function plusGrade() {
@@ -115,6 +127,18 @@ export function choseAnswer() {
 export function resetAnswer() {
     return (dispatch: any) => {
         dispatch(TestReducerActions.resetAnswer())
+    }
+}
+
+export function resetGrades() {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.resetGrades())
+    }
+}
+
+export function resetUserAnswers() {
+    return (dispatch: any) => {
+        dispatch(TestReducerActions.resetUserAnswers())
     }
 }
 

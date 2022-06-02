@@ -3,11 +3,11 @@ import React from "react";
 
 type PropsType = {
     grades: number
-    answers: Array<string>
     answersBl: React.Ref<any>
+    restart: React.Ref<any>
 }
 
-function Stats({grades, answersBl}: PropsType) {
+function Stats({restart, grades, answersBl}: PropsType) {
     return (
         <div id={'stats-wrapper'}>
             <div className="gratitude">
@@ -250,7 +250,7 @@ function Stats({grades, answersBl}: PropsType) {
                     </div>
                 </div>
             </div>
-            <button className="restart-btn">Restart Test</button>
+            <button className="restart-btn" ref={restart}>Restart Test</button>
         </div>
     )
 }

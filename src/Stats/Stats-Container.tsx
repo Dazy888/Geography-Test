@@ -3,13 +3,20 @@ import {connect} from "react-redux";
 import {AppStateType} from "../Redux/Redux-Store";
 import {getGrades, getUserAnswers} from "../Redux/Test-selectors";
 import React, {useEffect} from "react";
+import {resetGrades, resetUserAnswers} from "../Redux/Test-reducer";
+import {useNavigate} from "react-router-dom";
 
 type PropsType = {
     grades: number
     answers: Array<string>
+    resetGrades: () => void
+    resetUserAnswers: () => void
 }
-function StatsContainer({grades, answers}: PropsType) {
+function StatsContainer({resetUserAnswers, resetGrades, grades, answers}: PropsType) {
     const answersBl: any = React.createRef()
+    const restartBtn: any = React.createRef()
+    const navigate = useNavigate()
+
     useEffect(() => {
         const answersContent = answersBl.current.querySelectorAll('.answers__content')
         let i = 0
@@ -20,8 +27,16 @@ function StatsContainer({grades, answers}: PropsType) {
             }
             i++
         }
+
+        function restart() {
+            resetGrades()
+            resetUserAnswers()
+            navigate('/test')
+        }
+
+        restartBtn.current.onclick = restart
     }, [])
-    return <Stats answersBl={answersBl} grades={grades} answers={answers} />
+    return <Stats restart={restartBtn} answersBl={answersBl} grades={grades} />
 }
 
 function mapStateTpProps(state: AppStateType) {
@@ -31,5 +46,5 @@ function mapStateTpProps(state: AppStateType) {
     }
 }
 
-const StatsContainerComponent = connect(mapStateTpProps, {})(StatsContainer)
+const StatsContainerComponent = connect(mapStateTpProps, {resetGrades, resetUserAnswers})(StatsContainer)
 export default StatsContainerComponent
