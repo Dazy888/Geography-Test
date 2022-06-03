@@ -95,6 +95,7 @@
     .welcome__line {
       width: 450px !important;
       margin-top: 40px !important;
+      height: 2px !important;
     }
 
     .welcome__btn {
@@ -119,20 +120,21 @@
 
   .welcome {
     width: 450px !important;
-  }
 
-  .welcome__txt {
-    font-size: 20px !important;
-  }
+    .welcome__txt {
+      font-size: 20px !important;
+    }
 
-  .welcome__line {
-    width: 350px !important;
-    margin-top: 30px !important;
-  }
+    .welcome__line {
+      width: 350px !important;
+      height: 1px !important;
+      margin-top: 30px !important;
+    }
 
-  .welcome__btn {
-    margin-top: 20px !important;
-    font-size: 20px !important;
+    .welcome__btn {
+      margin-top: 20px !important;
+      font-size: 20px !important;
+    }
   }
 }
 
@@ -151,20 +153,20 @@
 
   .welcome {
     width: 350px !important;
-  }
 
-  .welcome__txt {
-    font-size: 15px !important;
-  }
+    .welcome__txt {
+      font-size: 15px !important;
+    }
 
-  .welcome__line {
-    width: 250px !important;
-    height: 2px !important;
-    margin-top: 20px !important;
-  }
+    .welcome__line {
+      width: 250px !important;
+      height: 2px !important;
+      margin-top: 20px !important;
+    }
 
-  .welcome__btn {
-    margin-top: 10px !important;
-    font-size: 15px !important;
+    .welcome__btn {
+      margin-top: 10px !important;
+      font-size: 15px !important;
+    }
   }
 }
