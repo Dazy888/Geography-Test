@@ -6,7 +6,7 @@ import {Provider} from "react-redux"
 import store from "./Redux/Redux-Store"
 // Components
 import {TestPage} from "./Test-Page/TestPage"
-import {StatsPage} from "./Stats/Stats-Container"
+import {StatsPage} from "./Stats-Page/Stats-Page"
 import {StartPage} from "./Start-Page/Start-Page"
 
 function App() {

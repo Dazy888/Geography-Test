@@ -167,8 +167,8 @@
 .content__answers {
   width: 700px;
   display: grid;
-  grid-template-areas:  'a b'
-                            'c d';
+  grid-template-areas:    'a b'
+                          'c d';
   grid-gap: 80px;
   justify-items: center;
   margin: 90px auto 0;
@@ -190,7 +190,7 @@
   }
 
   .content__option {
-    width: 165px;
+    width: 170px;
     text-align: center;
 
     .content__letter {
