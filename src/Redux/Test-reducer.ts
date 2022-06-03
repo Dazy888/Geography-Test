@@ -51,9 +51,9 @@ let initialState = {
     ] as Array<string>,
     userAnswers: [] as Array<string>,
     grades: 0,
-    isChosen: false,
     wastedTime: 0,
-    averageAnswerTime: 0
+    averageAnswerTime: 0,
+    isChosenAnswer: false
 }
 
 type InitialStateType = typeof initialState
@@ -73,12 +73,12 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
         case 'GEOGRAPHY-TEST/TEST/CHOSE-ANSWER':
             return {
                 ...state,
-                isChosen: true
+                isChosenAnswer: true
             }
         case 'GEOGRAPHY-TEST/TEST/RESET-ANSWER' :
             return {
                 ...state,
-                isChosen: false
+                isChosenAnswer: false
             }
         case 'GEOGRAPHY-TEST/TEST/RESET-GRADES':
             return {
@@ -107,7 +107,7 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
     }
 }
 
-type ActionsType = InferActionTypes<typeof TestReducerActions>
+export type ActionsType = InferActionTypes<typeof TestReducerActions>
 
 export const TestReducerActions = {
     plusGrade: () => ({type: 'GEOGRAPHY-TEST/TEST/PLUS-GRADE'} as const),
@@ -118,54 +118,6 @@ export const TestReducerActions = {
     resetUserAnswers: () => ({type: 'GEOGRAPHY-TEST/TEST/RESET-USER-ANSWERS'} as const),
     setWastedTime: (time: number) => ({type: 'GEOGRAPHY-TEST/TEST/SET-WASTED-TIME', time} as const),
     setAverageAnswerTime: (time: number) => ({type: 'GEOGRAPHY-TEST/TEST/SET-AVERAGE-ANSWER-TIME', time} as const)
-}
-
-export function plusGrade() {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.plusGrade())
-    }
-}
-
-export function addUserAnswer(answer: string) {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.addUserAnswer(answer))
-    }
-}
-
-export function choseAnswer() {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.choseAnswer())
-    }
-}
-
-export function resetAnswer() {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.resetAnswer())
-    }
-}
-
-export function resetGrades() {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.resetGrades())
-    }
-}
-
-export function resetUserAnswers() {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.resetUserAnswers())
-    }
-}
-
-export function setWastedTime(time: number) {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.setWastedTime(time))
-    }
-}
-
-export function setAverageAnswerTime(time: number) {
-    return (dispatch: any) => {
-        dispatch(TestReducerActions.setAverageAnswerTime(time))
-    }
 }
 
 export default testReducer

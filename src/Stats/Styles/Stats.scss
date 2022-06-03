@@ -26,13 +26,12 @@
 
   p {
     &:first-child {
-      font-size: 30px;
       margin: 20px;
+      font-size: 30px;
     }
-    font-size: 25px;
     margin: 20px;
+    font-size: 25px;
   }
-
 }
 
 // Answers
@@ -96,8 +95,8 @@
 
       p {
         display: block;
-        font-size: 25px;
         margin: 10px;
+        font-size: 25px;
       }
     }
   }
@@ -122,86 +121,5 @@
   &:hover {
     transform: translateY(-30px);
     box-shadow: 0 10px 10px 0 rgb(111, 224, 202);
-  }
-}
-
-@media screen and(max-width: 1250px) {
-  .restart-btn {
-    &:hover {
-      transform: translateY(0);
-      box-shadow: 0 0;
-    }
-  }
-}
-
-@media screen and(max-width: 950px) {
-  .answers__content {
-    height: 180px !important;
-  }
-
-  .letter {
-    font-size: 20px !important;
-  }
-
-  .answers .answers__row .answers__bl span {
-    width: 46px !important;
-    height: 46px !important;
-  }
-
-  .answers .answers__row .answers__bl .round {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  .answers .answers__row .answers__bl .round-user {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  .answers__bl {
-    p {
-      font-size: 20px !important;
-    }
-  }
-}
-
-@media screen and(max-width: 750px) {
-  .answers__question {
-    font-size: 25px !important;
-  }
-
-  .answers__number {
-    font-size: 25px !important;
-  }
-
-  .answers__content {
-    width: 480px;
-    margin: auto;
-    height: 130px !important;
-  }
-
-  .letter {
-    font-size: 15px !important;
-  }
-
-  .answers .answers__row .answers__bl span {
-    width: 36px !important;
-    height: 36px !important;
-  }
-
-  .answers .answers__row .answers__bl .round {
-    width: 30px !important;
-    height: 30px !important;
-  }
-
-  .answers .answers__row .answers__bl .round-user {
-    width: 30px !important;
-    height: 30px !important;
-  }
-
-  .answers__bl {
-    p {
-      font-size: 15px !important;
-    }
   }
 }

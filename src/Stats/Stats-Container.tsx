@@ -1,54 +1,43 @@
-import Stats from "./Stats";
-import {connect} from "react-redux";
-import {AppStateType} from "../Redux/Redux-Store";
-import {getAverageAnswerTime, getGrades, getUserAnswers, getWastedTime} from "../Redux/Test-selectors";
-import React, {useEffect} from "react";
-import {resetGrades, resetUserAnswers} from "../Redux/Test-reducer";
-import {useNavigate} from "react-router-dom";
+import React, {useEffect} from "react"
+// Hooks
+import {useNavigate} from "react-router-dom"
+import {useDispatch, useSelector} from "react-redux"
+// Data
+import {getAverageAnswerTime, getGrades, getUserAnswers, getWastedTime} from "../Redux/Test-selectors"
+import {TestReducerActions} from "../Redux/Test-reducer"
+// Component
+import {Stats} from "./Stats"
 
-type PropsType = {
-    grades: number
-    answers: Array<string>
-    resetGrades: () => void
-    resetUserAnswers: () => void
-    wastedTime: number
-    averageAnswerTime: number
-}
-function StatsContainer({wastedTime, averageAnswerTime, resetUserAnswers, resetGrades, grades, answers}: PropsType) {
-    const answersBl: any = React.createRef()
-    const restartBtn: any = React.createRef()
+export function StatsPage() {
+    // Ref
+    const wrapper: any = React.createRef()
+    // Hooks
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    // Data
+    const wastedTime = useSelector(getWastedTime)
+    const averageAnswerTime = useSelector(getAverageAnswerTime)
+    const grades = useSelector(getGrades)
+    const userAnswers = useSelector(getUserAnswers)
 
     useEffect(() => {
-        const answersContent = answersBl.current.querySelectorAll('.answers__content')
+        const answersContent = wrapper.current.querySelectorAll('.answers__content')
         let i = 0
         for (const answersContentElement of answersContent) {
             const answersTexts = answersContentElement.querySelectorAll('.answer')
             for (const answersText of answersTexts) {
-                if (answersText.innerText === answers[i]) answersText.previousElementSibling.classList.add('round-user')
+                if (answersText.innerText === userAnswers[i]) answersText.previousElementSibling.classList.add('round-user')
             }
             i++
         }
 
         function restart() {
-            resetGrades()
-            resetUserAnswers()
+            dispatch(TestReducerActions.resetGrades())
+            dispatch(TestReducerActions.resetUserAnswers())
             navigate('/')
         }
 
-        restartBtn.current.onclick = restart
+        wrapper.current.querySelector('.restart-btn').onclick = restart
     }, [])
-    return <Stats averageAnswerTime={averageAnswerTime} wastedTime={wastedTime} restart={restartBtn} answersBl={answersBl} grades={grades} />
+    return <Stats wrapper={wrapper} averageAnswerTime={averageAnswerTime} wastedTime={wastedTime} grades={grades} />
 }
-
-function mapStateTpProps(state: AppStateType) {
-    return {
-        grades: getGrades(state),
-        answers: getUserAnswers(state),
-        wastedTime: getWastedTime(state),
-        averageAnswerTime: getAverageAnswerTime(state)
-    }
-}
-
-const StatsContainerComponent = connect(mapStateTpProps, {resetGrades, resetUserAnswers})(StatsContainer)
-export default StatsContainerComponent

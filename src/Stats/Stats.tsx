@@ -1,24 +1,24 @@
+import './Styles/Media.css'
 import './Styles/Stats.css'
 import React from "react";
 
 type PropsType = {
     grades: number
-    answersBl: React.Ref<any>
-    restart: React.Ref<any>
     wastedTime: number
     averageAnswerTime: number
+    wrapper: React.Ref<any>
 }
 
-function Stats({wastedTime, averageAnswerTime, restart, grades, answersBl}: PropsType) {
+export function Stats({wastedTime, averageAnswerTime, grades, wrapper}: PropsType) {
     return (
-        <div id={'stats-wrapper'}>
+        <div id={'stats-wrapper'} ref={wrapper}>
             <div className="gratitude">
                 <p className="gratitude__txt">Thanks for passing the test</p>
                 <p className={'gratitude__grades'}>You earned <span className={'grades'}>{grades}</span> of 10 grades</p>
                 <p className={'gratitude__wasted-time'}>For passing the test you wasted {wastedTime} seconds</p>
                 <p className={'gratitude__average-answer-time'}>On average, it took you {averageAnswerTime} seconds to answer</p>
             </div>
-            <div className="answers" ref={answersBl}>
+            <div className="answers">
                 <div className={'answers__row'}>
                     <p className="answers__question">What country is the biggest in Europe</p>
                     <p className={'answers__number'}>1</p>
@@ -263,9 +263,7 @@ function Stats({wastedTime, averageAnswerTime, restart, grades, answersBl}: Prop
                     </div>
                 </div>
             </div>
-            <button className="restart-btn" ref={restart}>Restart Test</button>
+            <button className="restart-btn">Restart Test</button>
         </div>
     )
 }
-
-export default Stats

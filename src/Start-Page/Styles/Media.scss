@@ -1,3 +1,109 @@
+@media screen and(max-width: 1200px) {
+  .big-shadow {
+    box-shadow: 0 10px 150px green !important;
+  }
+
+  .small-shadow {
+    box-shadow: 0 10px 30px green !important;
+  }
+
+  .welcome__load-animation {
+    height: 400px !important;
+  }
+
+  .welcome {
+    width: 900px !important;
+
+    .welcome__txt {
+      font-size: 40px !important;
+    }
+
+    .welcome__line {
+      width: 700px !important;
+      height: 4px !important;
+      margin-top: 80px !important;
+    }
+
+    .welcome__btn {
+      margin-top: 80px !important;
+      font-size: 40px !important;
+
+      &:hover {
+        color: black !important;
+      }
+
+      &:hover:after {
+        width: 0 !important;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 950px) {
+  .big-shadow {
+    box-shadow: 0 10px 100px green !important;
+  }
+
+  .small-shadow {
+    box-shadow: 0 10px 20px green !important;
+  }
+
+  .welcome__load-animation {
+    height: 300px !important;
+  }
+
+  .welcome {
+    width: 700px !important;
+
+    .welcome__txt {
+      font-size: 30px !important;
+    }
+
+    .welcome__line {
+      width: 550px !important;
+      height: 3px !important;
+      margin-top: 60px !important;
+    }
+
+    .welcome__btn {
+      margin-top: 60px !important;
+      font-size: 30px !important;
+    }
+  }
+}
+
+@media screen and(max-width: 720px) {
+  .big-shadow {
+    box-shadow: 0 10px 80px green !important;
+  }
+
+  .small-shadow {
+    box-shadow: 0 10px 20px green !important;
+  }
+
+  .welcome__load-animation {
+    height: 200px !important;
+  }
+
+  .welcome {
+    width: 550px !important;
+
+    .welcome__txt {
+      font-size: 25px !important;
+    }
+
+    .welcome__line {
+      width: 450px !important;
+      margin-top: 40px !important;
+    }
+
+    .welcome__btn {
+      margin-top: 30px !important;
+      font-size: 25px !important;
+    }
+  }
+}
+
 @media screen and(max-width: 570px) {
   .big-shadow {
     box-shadow: 0 10px 60px green !important;

@@ -17,7 +17,7 @@ export function getUserAnswers(state: AppStateType) {
 }
 
 export function getChosenStatus(state: AppStateType) {
-    return state.isChosen
+    return state.isChosenAnswer
 }
 
 export function getPhotographs(state: AppStateType) {

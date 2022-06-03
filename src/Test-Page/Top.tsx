@@ -1,34 +1,31 @@
 import './Styles/Test.css'
 import './Styles/Media.css'
 import React, {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
+import {ActionsType} from "../Redux/Test-reducer";
 
 type PropsType = {
-    circle: any
-    sec: any
-    min: any
-    ms: any
-    rows: any
-    timeBl: any
-    setWastedTime: (time: number) => void
-    setAverageAnswerTime: (time: number) => void
+    wrapper: any
+    setWastedTime: (time: number) => ActionsType
+    setAverageAnswerTime: (time: number) => ActionsType
+    navigate: (url: string) => void
+    dispatch: any
 }
 
-function Top({setWastedTime, setAverageAnswerTime, timeBl, circle, sec, min, ms, rows}: PropsType) {
-    const navigate = useNavigate()
+function Top({navigate, dispatch, wrapper, setWastedTime, setAverageAnswerTime}: PropsType) {
     useEffect(() => {
-        const circleNode: any = circle.current
-        const minNode: any = min.current
-        const secNode: any = sec.current
-        const msNode: any = ms.current
+        const wrapperNode: any = wrapper.current
+        const circle: any = wrapperNode.querySelector('.top__progress-ring_circle')
+        const minTxt: any = wrapperNode.querySelector('.min')
+        const secTxt: any = wrapperNode.querySelector('.sec')
+        const msTxt: any = wrapperNode.querySelector('.ms')
 
         function circleAnimation() {
-            const circumference = 2 * Math.PI * circleNode.r.baseVal.value
-            circleNode.style.strokeDasharray = `${circumference} ${circumference}`
-            circleNode.style.strokeDashoffset = circumference
+            const circumference = 2 * Math.PI * circle.r.baseVal.value
+            circle.style.strokeDasharray = `${circumference} ${circumference}`
+            circle.style.strokeDashoffset = circumference
 
             function setProgress(percent: number) {
-                circleNode.style.strokeDashoffset = circumference - percent / 100 * circumference
+                circle.style.strokeDashoffset = circumference - percent / 100 * circumference
             }
 
             let c = 100;
@@ -52,59 +49,59 @@ function Top({setWastedTime, setAverageAnswerTime, timeBl, circle, sec, min, ms,
             let min = 4
             let sec = 59
             let ms = 0
-            secNode.innerText = sec
+            secTxt.innerText = sec
 
             function timeInterval() {
                 if (min === 0 && sec === 0) {
                     clearInterval(interval)
-                    setWastedTime(300 - (Number(minNode.innerText) * 60 + Number(secNode.innerText)))
-                    setAverageAnswerTime((300 - (Number(minNode.innerText) * 60 + Number(secNode.innerText))) / 10)
+                    dispatch(setWastedTime(300 - (Number(minTxt.innerText) * 60 + Number(secTxt.innerText))))
+                    dispatch(setAverageAnswerTime((300 - (Number(minTxt.innerText) * 60 + Number(secTxt.innerText))) / 10))
                     navigate('/stats')
                 }
 
                 if (ms > 1) {
                     ms--
-                    msNode.innerText = ms
+                    msTxt.innerText = ms
                 } else {
                     ms = 99
                     sec--
-                    secNode.innerText = sec
+                    secTxt.innerText = sec
                 }
 
-                if (ms < 10) msNode.innerText = '0' + ms
-                if (sec < 10) secNode.innerText = '0' + sec
+                if (ms < 10) msTxt.innerText = '0' + ms
+                if (sec < 10) secTxt.innerText = '0' + sec
 
                 if (sec === 0 && ms === 1) {
                     sec = 60
                     min--
-                    minNode.innerText = min
+                    minTxt.innerText = min
                 }
             }
-
             const interval = setInterval(timeInterval, 10)
         }
 
         testTimeTimer()
         circleAnimation()
     }, [])
+
     return (
         <div className="container">
             <div className="top flex-property-set_between">
-                <div className="top__timer" ref={timeBl}>
+                <div className="top__timer">
                     <i className="fa-regular fa-clock clock-icon"></i>
                     <div className="top__svg">
                         <svg className="top__progress-ring" width="170" height="170">
-                            <circle ref={circle} className="top__progress-ring_circle" stroke="rgb(255,94,149)"
+                            <circle className="top__progress-ring_circle" stroke="rgb(255,94,149)"
                                     strokeWidth="4" r="80" fill="transparent" cx="85" cy="85"/>
                         </svg>
-                        <p className="timer-txt"><span className="min" ref={min}>4</span> <span
+                        <p className="timer-txt"><span className="min">4</span> <span
                             className="colon">:</span>
-                            <span className="sec" ref={sec}>00</span> <span className="ms" ref={ms}>00</span></p>
+                            <span className="sec">00</span> <span className="ms">00</span></p>
                     </div>
                 </div>
                 <div className="top__current-question">
                     <i className="fa-solid fa-clipboard-question current-question-icon"></i>
-                    <div className="top__rows" ref={rows}>
+                    <div className="top__rows">
                         <div className="top__row flex-property-set_between">
                                 <span className="top__item flex-property-set_center top__item_selected"> <i
                                     className="fa-solid fa-1 num-icon"></i> </span>
