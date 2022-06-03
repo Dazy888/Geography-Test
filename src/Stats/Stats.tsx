@@ -1,5 +1,5 @@
-import './Styles/Media.css'
 import './Styles/Stats.css'
+import './Styles/Media.css'
 import React from "react";
 
 type PropsType = {
