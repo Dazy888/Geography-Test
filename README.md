@@ -1,2 +1,2 @@
 # Geography-Test
-This is like a school geography test with my own design
+This is a school geography test with my own design
