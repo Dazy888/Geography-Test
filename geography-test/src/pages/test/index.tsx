@@ -28,6 +28,7 @@ const Test: React.FC = () => {
         if (currentQuestion === 9) router.push('/stats')
 
         dispatch(TestReducerActions.addUserAnswer())
+        dispatch(TestReducerActions.setUserAnswer(''))
         nextQuesAnim()
         setTimeout(() => dispatch(TestReducerActions.setCurrentQuestion()), 600)
         dispatch(TestReducerActions.setPassedQuestions(true))
