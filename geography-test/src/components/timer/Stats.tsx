@@ -7,7 +7,7 @@ import styles from "@/styles/Test.module.scss"
 import { QuestionsRow } from "@/components/timer/Questions-row"
 import { Time } from "@/components/test/Time"
 // Store
-import {getCircleR, getPassedQuestions} from "@/store/reducer/test-selector"
+import { getPassedQuestions } from "@/store/reducer/test-selector"
 import { TestReducerActions } from "@/store/reducer/test-reducer"
 
 const StatsComponent = () => {
@@ -119,4 +119,5 @@ const StatsComponent = () => {
         </div>
     )
 }
+
 export const Stats = React.memo(StatsComponent)
