@@ -30,6 +30,8 @@ const Stats = () => {
 
     function restartListener() {
         dispatch(TestReducerActions.resetUserAnswers())
+        dispatch(TestReducerActions.setCurrentQuestion(0))
+        dispatch(TestReducerActions.resetPassedQuestions())
         router.push('/')
     }
 

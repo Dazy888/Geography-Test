@@ -10,23 +10,22 @@ import { Time } from "@/components/test/Time"
 import {getCircleR, getPassedQuestions} from "@/store/reducer/test-selector"
 import { TestReducerActions } from "@/store/reducer/test-reducer"
 
-let m: any = 4
-let s: any = 59
-let ms: any = 99
-let c = 100
-let r = 60
-
 const StatsComponent = () => {
+    let m: any = 4
+    let s: any = 59
+    let ms: any = 99
+    let c = 100
+    let r = 60
+
     const router = useRouter()
     const dispatch = useDispatch()
-
     const circle: any = useRef()
 
     const passedQuestions = useSelector(getPassedQuestions)
 
-    // const [circleR, setCircleR] = useState(60)
-
-    // const circleR = useSelector(getCircleR)
+    useEffect(() => {
+        if (passedQuestions.length === 10) dispatch(TestReducerActions.setWastedTime(300 - (mText * 60 + sText)))
+    }, [passedQuestions])
 
     const [mText, setM] = useState(m)
     const [sText, setS] = useState(s)
@@ -120,5 +119,4 @@ const StatsComponent = () => {
         </div>
     )
 }
-
 export const Stats = React.memo(StatsComponent)

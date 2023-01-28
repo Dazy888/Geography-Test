@@ -31,8 +31,8 @@ const AnswerComponent: React.FC<Props> = ({ answer, letter, animation }) => {
 
     function answerListener(e: any) {
         function setAnswer() {
-            const answer = e.target.closest('span')
-            answer.classList.add(styles['content__selected-answer'])
+            const span = e.target.closest('span')
+            span.classList.add(styles['content__selected-answer'])
             dispatch(TestReducerActions.setUserAnswer(answer))
         }
 

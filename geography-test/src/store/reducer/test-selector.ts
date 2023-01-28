@@ -16,7 +16,7 @@ export const getUserAnswer: SelectorStringFunc = (state) => state.test.userAnswe
 export const getPassedQuestions: SelectorBooleanArrFunc = (state) => state.test.passedQuestions
 export const getCurrentQuestion: SelectorNumberFunc = (state) => state.test.currentQuestion
 export const getWastedTime: SelectorNumberFunc = (state) => state.test.wastedTime
-export const getAverageAnswerTime: SelectorNumberFunc = (state) => state.test.averageAnswerTime
+export const getAverageAnswerTime: SelectorNumberFunc = (state) => state.test.wastedTime / 10
 export const getGrades: (state: AppStateType) => number | any = (state) => {
     if (state.test.userAnswers) {
         let grades = 0

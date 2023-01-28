@@ -68,17 +68,17 @@ function testReducer(state = initialState, action: ActionsType): InitialStateTyp
         case 'GEOGRAPHY-TEST/test/SET-CURRENT-QUESTION':
             return {
                 ...state,
-                currentQuestion: state.currentQuestion + 1
+                currentQuestion: action.value
             }
         case 'GEOGRAPHY-TEST/test/SET-PASSED-QUESTIONS':
             return {
                 ...state,
                 passedQuestions: [...state.passedQuestions, action.question]
             }
-        case 'GEOGRAPHY-TEST/test/SET-CIRCLE-R':
+        case 'GEOGRAPHY-TEST/test/RESET-PASSED-QUESTIONS':
             return {
                 ...state,
-                circleR: action.r
+                passedQuestions: []
             }
         default:
             return {
@@ -95,9 +95,9 @@ export const TestReducerActions = {
     setWastedTime: (time: number) => ({type: 'GEOGRAPHY-TEST/test/SET-WASTED-TIME', time} as const),
     setAverageAnswerTime: (time: number) => ({type: 'GEOGRAPHY-TEST/test/SET-AVERAGE-ANSWER-TIME', time} as const),
     setUserAnswer: (answer: string) => ({type: 'GEOGRAPHY-TEST/test/SET-USER-ANSWER', answer} as const),
-    setCurrentQuestion: () => ({type: 'GEOGRAPHY-TEST/test/SET-CURRENT-QUESTION'} as const),
+    setCurrentQuestion: (value: number) => ({type: 'GEOGRAPHY-TEST/test/SET-CURRENT-QUESTION', value} as const),
+    resetPassedQuestions: () => ({type: 'GEOGRAPHY-TEST/test/RESET-PASSED-QUESTIONS'} as const),
     setPassedQuestions: (question: boolean) => ({type: 'GEOGRAPHY-TEST/test/SET-PASSED-QUESTIONS', question} as const),
-    setCircleR: (r: number) => ({type: 'GEOGRAPHY-TEST/test/SET-CIRCLE-R', r} as const),
 }
 
 export default testReducer

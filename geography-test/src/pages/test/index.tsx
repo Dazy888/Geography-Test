@@ -30,7 +30,7 @@ const Test: React.FC = () => {
         dispatch(TestReducerActions.addUserAnswer())
         dispatch(TestReducerActions.setUserAnswer(''))
         nextQuesAnim()
-        setTimeout(() => dispatch(TestReducerActions.setCurrentQuestion()), 600)
+        setTimeout(() => dispatch(TestReducerActions.setCurrentQuestion(currentQuestion + 1)), 600)
         dispatch(TestReducerActions.setPassedQuestions(true))
     }
 
