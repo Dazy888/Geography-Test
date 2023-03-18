@@ -1,0 +1,253 @@
+#wrapper {
+  .gratitude {
+    background-color: rgb(111, 224, 202);
+
+    .colorful-text {
+      color: rgb(255, 94, 149);
+    }
+  }
+
+  .answers {
+    .answers__content {
+      height: 230px;
+      grid-template-areas: 'a b c d';
+      border: 3px solid rgb(111, 224, 202);
+
+      .a {
+        grid-area: a;
+      }
+
+      .b {
+        grid-area: b;
+      }
+
+      .c {
+        grid-area: c;
+      }
+
+      .d {
+        grid-area: d;
+      }
+
+      .true-answer {
+        width: 48px !important;
+        height: 48px !important;
+        border: 3px solid rgb(255, 94, 149);
+      }
+
+      .user-answer {
+        width: 48px !important;
+        height: 48px !important;
+        border: 3px solid rgb(111, 224, 202);
+      }
+    }
+  }
+
+  .restart-btn {
+    width: 220px;
+    height: 45px;
+    background-color: rgb(255, 94, 149);
+    transition: transform 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      transform: translateY(-30px);
+      box-shadow: 0 10px 10px 0 rgb(111, 224, 202);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #wrapper {
+    .gratitude {
+      width: fit-content;
+      padding: 15px;
+
+      p {
+        margin: 15px;
+        font-size: 17px;
+
+        &:first-child {
+          margin: 15px;
+          font-size: 21px;
+        }
+      }
+    }
+
+    .answers {
+      .answers__question {
+        margin-top: 120px;
+
+        h1 {
+          margin-bottom: 20px;
+        }
+
+        .answers__content {
+          width: 360px;
+          height: fit-content;
+          padding: 15px;
+          margin: auto;
+          display: grid;
+          grid-template-areas:  'a b'
+                                'c d';
+          grid-gap: 20px;
+
+          span {
+            width: 45px;
+            height: 45px;
+
+            i {
+              font-size: 17px;
+            }
+          }
+
+          .true-answer {
+            width: 39px !important;
+            height: 39px !important;
+          }
+
+          .user-answer {
+            width: 39px !important;
+            height: 39px !important;
+          }
+
+          p {
+            margin: 10px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .restart-btn {
+      width: 200px;
+      height: 40px;
+      margin: 80px auto;
+      font-size: 21px;
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  #wrapper {
+    .gratitude {
+      p {
+        margin: 15px;
+        font-size: 16px;
+
+        &:first-child {
+          margin: 15px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .answers {
+      .answers__question {
+        h1 {
+          font-size: 22px;
+        }
+
+        .answers__content {
+          width: 300px;
+
+          div {
+            span {
+              width: 34px;
+              height: 34px;
+
+              i {
+                font-size: 15px;
+              }
+            }
+
+            .true-answer {
+              width: 34px !important;
+              height: 34px !important;
+            }
+
+            .user-answer {
+              width: 34px !important;
+              height: 34px !important;
+            }
+
+            p {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  #wrapper {
+    padding-top: 100px;
+
+    .gratitude {
+      padding: 10px;
+
+      p {
+        margin: 10px;
+        font-size: 14px;
+
+        &:first-child {
+          margin: 10px;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .answers {
+      .answers__question {
+        margin-top: 100px;
+
+        h1 {
+          margin-bottom: 15px;
+          font-size: 18px;
+        }
+
+        .answers__content {
+          width: 250px;
+
+          div {
+            span {
+              width: 29px;
+              height: 29px;
+
+              i {
+                font-size: 13px;
+              }
+            }
+
+            .true-answer {
+              width: 29px !important;
+              height: 29px !important;
+            }
+
+            .user-answer {
+              width: 29px !important;
+              height: 29px !important;
+            }
+
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .restart-btn {
+      width: 150px;
+      height: 35px;
+      margin: 60px auto;
+      font-size: 20px;
+    }
+  }
+}
