@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/router"
-// Styles
-import styles from "@/styles/Test.module.scss"
-// Components
-import { QuestionsRow } from "@/components/test/QuestionsRow"
-import { Time } from "@/components/test/Time"
-// Store
 import { useAppDispatch, useAppSelector } from "@/hooks/redux"
 import { setWastedTime } from "@/store/reducer/TestSlice"
+import styles from "@/styles/Test.module.scss"
+import { QuestionsRow } from "@/components/test/QuestionsRow"
+import { Time } from "@/components/test/Time"
 
 const StatsComponent = () => {
     let m: any = 4

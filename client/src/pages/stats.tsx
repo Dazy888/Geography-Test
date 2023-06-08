@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-// Hooks
 import { useAppDispatch, useAppSelector } from "@/hooks/redux"
-// Store
 import { resetPassedQuestions, resetUserAnswers, setCurrentQuestion } from "@/store/reducer/TestSlice"
-// Styles
 import styles from '@/styles/Stats.module.scss'
-// Component
 import { AnswersRow } from "@/components/stats/AnswersRow"
 
 const Stats = () => {

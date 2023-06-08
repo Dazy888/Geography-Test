@@ -5,94 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b4e142e-3705-4dd0-8e21-3dc8894e385f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/question-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/stats/Answers-block.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/stats/Answers-row.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/stats/Gratitude.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/stats/Restart-btn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/test/Answer-element.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/test/Next-button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/test/Question.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/test/Time.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/timer/Answer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/timer/Content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/timer/Questions-row.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/timer/Stats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/redux.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/_app.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/_document.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/stats.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/reducer/TestSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Stats.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/Test.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/next.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/public/question-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/stats/Answers-block.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/stats/Answers-row.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/stats/Gratitude.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/stats/Restart-btn.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/test/Answer-element.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/test/Next-button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/test/Question.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/test/Time.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/timer/Answer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/timer/Questions-row.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/components/timer/Stats.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/pages/_app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/pages/_document.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/pages/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/pages/stats/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/pages/test/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/store/reducer/test-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/store/reducer/test-selector.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/store/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/styles/Index.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/styles/Stats.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/styles/Test.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/styles/main.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/src/styles/reset.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geography-test/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Stats.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Stats.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/Test.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Test.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +46,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Programming&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programming/Geography-Test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -153,6 +73,8 @@
       <workItem from="1679052041232" duration="181000" />
       <workItem from="1679052423192" duration="1652000" />
       <workItem from="1679062319010" duration="4331000" />
+      <workItem from="1686241229949" duration="12000" />
+      <workItem from="1686241243451" duration="471000" />
     </task>
     <servers />
   </component>

@@ -1,15 +1,12 @@
 import React, { useState } from "react"
 import { useRouter } from "next/router"
-// Styles
 import styles from "@/styles/Test.module.scss"
+import { addUserAnswer, setCurrentQuestion, setPassedQuestions, setUserAnswer } from "@/store/reducer/TestSlice"
+import { useAppDispatch, useAppSelector } from "@/hooks/redux"
 // Components
 import { Question } from "@/components/test/Question"
 import { Answer } from "@/components/test/Answer"
 import { NextBtn } from "@/components/test/NextBtn"
-// Store
-import { addUserAnswer, setCurrentQuestion, setPassedQuestions, setUserAnswer } from "@/store/reducer/TestSlice"
-// Hooks
-import { useAppDispatch, useAppSelector } from "@/hooks/redux"
 
 const ContentComponent = () => {
     const dispatch = useAppDispatch()
@@ -47,7 +44,7 @@ const ContentComponent = () => {
 
     return(
         <div className={`${styles.content} text-center mx-auto`}>
-            <Question textAnim={textAnim} question={question} imgAnim={imgAnim} image={image}/>
+            <Question {...{ question, image, imgAnim, textAnim }} />
             <div className={`${styles.answers} grid justify-center mt-5 mx-auto`}>
                 <Answer animation={textAnim} letter={'a'} answer={answers[0]}/>
                 <Answer animation={textAnim} letter={'b'} answer={answers[1]}/>

@@ -65,29 +65,27 @@
     height: 450px !important;
   }
 
-  #wrapper {
-    .content {
-      width: 900px;
+  #wrapper .content {
+    width: 900px;
 
-      div {
-        p {
-          font-size: 40px;
-        }
+    div {
+      p {
+        font-size: 40px;
+      }
 
-        hr {
-          height: 4px;
-          margin-top: 80px;
-        }
+      hr {
+        height: 4px;
+        margin-top: 80px;
+      }
 
-        button {
-          margin-top: 80px;
-          font-size: 40px;
+      button {
+        margin-top: 80px;
+        font-size: 40px;
 
-          &:hover {
-            color: black;
-          }
+        &:hover {
+          color: black;
 
-          &:hover:after {
+          &:after {
             width: 0;
           }
         }
@@ -106,24 +104,22 @@
     height: 300px !important;
   }
 
-  #wrapper {
-    .content {
-      width: 700px;
+  #wrapper .content {
+    width: 700px;
 
-      div {
-        p {
-          font-size: 30px;
-        }
+    div {
+      p {
+        font-size: 30px;
+      }
 
-        hr {
-          height: 3px;
-          margin-top: 60px;
-        }
+      hr {
+        height: 3px;
+        margin-top: 60px;
+      }
 
-        button {
-          margin-top: 60px;
-          font-size: 30px;
-        }
+      button {
+        margin-top: 60px;
+        font-size: 30px;
       }
     }
   }
@@ -172,46 +168,42 @@
     height: 130px !important;
   }
 
-  #wrapper {
-    .content {
-      width: 350px;
+  #wrapper .content {
+    width: 350px;
 
-      div {
-        p {
-          font-size: 15px;
-        }
+    div {
+      p {
+        font-size: 15px;
+      }
 
-        hr {
-          height: 2px;
-          margin-top: 20px;
-        }
+      hr {
+        height: 2px;
+        margin-top: 20px;
+      }
 
-        button {
-          margin-top: 10px;
-          font-size: 15px;
-        }
+      button {
+        margin-top: 10px;
+        font-size: 15px;
       }
     }
   }
 }
 
 @media (max-width: 375px) {
-  #wrapper {
-    .content {
-      width: 320px;
+  #wrapper .content {
+    width: 320px;
 
-      div {
-        p {
-          font-size: 14px;
-        }
+    div {
+      p {
+        font-size: 14px;
+      }
 
-        hr {
-          height: 1px;
-        }
+      hr {
+        height: 1px;
+      }
 
-        button {
-          font-size: 16px;
-        }
+      button {
+        font-size: 16px;
       }
     }
   }

@@ -73,47 +73,45 @@
       }
     }
 
-    .answers {
-      .answers__question {
-        margin-top: 120px;
+    .answers .answers__question {
+      margin-top: 120px;
 
-        h1 {
-          margin-bottom: 20px;
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .answers__content {
+        width: 360px;
+        height: fit-content;
+        padding: 15px;
+        margin: auto;
+        display: grid;
+        grid-template-areas:  'a b'
+                                'c d';
+        grid-gap: 20px;
+
+        span {
+          width: 45px;
+          height: 45px;
+
+          i {
+            font-size: 17px;
+          }
         }
 
-        .answers__content {
-          width: 360px;
-          height: fit-content;
-          padding: 15px;
-          margin: auto;
-          display: grid;
-          grid-template-areas:  'a b'
-                                'c d';
-          grid-gap: 20px;
+        .true-answer {
+          width: 39px !important;
+          height: 39px !important;
+        }
 
-          span {
-            width: 45px;
-            height: 45px;
+        .user-answer {
+          width: 39px !important;
+          height: 39px !important;
+        }
 
-            i {
-              font-size: 17px;
-            }
-          }
-
-          .true-answer {
-            width: 39px !important;
-            height: 39px !important;
-          }
-
-          .user-answer {
-            width: 39px !important;
-            height: 39px !important;
-          }
-
-          p {
-            margin: 10px;
-            font-size: 20px;
-          }
+        p {
+          margin: 10px;
+          font-size: 20px;
         }
       }
     }
@@ -146,38 +144,36 @@
       }
     }
 
-    .answers {
-      .answers__question {
-        h1 {
-          font-size: 22px;
-        }
+    .answers .answers__question {
+      h1 {
+        font-size: 22px;
+      }
 
-        .answers__content {
-          width: 300px;
+      .answers__content {
+        width: 300px;
 
-          div {
-            span {
-              width: 34px;
-              height: 34px;
+        div {
+          span {
+            width: 34px;
+            height: 34px;
 
-              i {
-                font-size: 15px;
-              }
+            i {
+              font-size: 15px;
             }
+          }
 
-            .true-answer {
-              width: 34px !important;
-              height: 34px !important;
-            }
+          .true-answer {
+            width: 34px !important;
+            height: 34px !important;
+          }
 
-            .user-answer {
-              width: 34px !important;
-              height: 34px !important;
-            }
+          .user-answer {
+            width: 34px !important;
+            height: 34px !important;
+          }
 
-            p {
-              font-size: 17px;
-            }
+          p {
+            font-size: 17px;
           }
         }
       }
@@ -203,41 +199,39 @@
       }
     }
 
-    .answers {
-      .answers__question {
-        margin-top: 100px;
+    .answers .answers__question {
+      margin-top: 100px;
 
-        h1 {
-          margin-bottom: 15px;
-          font-size: 18px;
-        }
+      h1 {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
 
-        .answers__content {
-          width: 250px;
+      .answers__content {
+        width: 250px;
 
-          div {
-            span {
-              width: 29px;
-              height: 29px;
+        div {
+          span {
+            width: 29px;
+            height: 29px;
 
-              i {
-                font-size: 13px;
-              }
+            i {
+              font-size: 13px;
             }
+          }
 
-            .true-answer {
-              width: 29px !important;
-              height: 29px !important;
-            }
+          .true-answer {
+            width: 29px !important;
+            height: 29px !important;
+          }
 
-            .user-answer {
-              width: 29px !important;
-              height: 29px !important;
-            }
+          .user-answer {
+            width: 29px !important;
+            height: 29px !important;
+          }
 
-            p {
-              font-size: 15px;
-            }
+          p {
+            font-size: 15px;
           }
         }
       }

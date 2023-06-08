@@ -1,11 +1,7 @@
 import React, { useEffect } from "react"
-// Styles
 import styles from "@/styles/Test.module.scss"
-// Component
 import { AnswerElement } from "@/components/test/AnswerElement"
-// Hooks
 import { useAppDispatch, useAppSelector } from "@/hooks/redux"
-// Store
 import { setUserAnswer } from "@/store/reducer/TestSlice"
 
 interface Props {
@@ -47,7 +43,7 @@ const AnswerComponent: React.FC<Props> = ({ answer, letter, animation }) => {
         }
     }
 
-    return <AnswerElement letter={letter} answer={answer} animation={animation} answerListener={answerListener}/>
+    return <AnswerElement {...{ letter, animation, answer }} answerListener={answerListener}/>
 }
 
 export const Answer = React.memo(AnswerComponent)
