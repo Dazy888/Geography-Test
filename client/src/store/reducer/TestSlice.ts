@@ -62,5 +62,7 @@ export const testSlice = createSlice({
     }
 })
 
-export const { addUserAnswer, resetUserAnswers, setUserAnswer, resetPassedQuestions, setPassedQuestions, setCurrentQuestion, setWastedTime } = testSlice.actions
+export const { addUserAnswer, resetUserAnswers, setUserAnswer, resetPassedQuestions,
+    setPassedQuestions, setCurrentQuestion, setWastedTime
+} = testSlice.actions
 export const testReducer = testSlice.reducer
