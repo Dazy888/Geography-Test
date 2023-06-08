@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f6f4e62-5927-471b-9311-f2854dfd5a6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/next.config.js" beforeDir="false" />
-    </list>
+    <list default="true" id="6f6f4e62-5927-471b-9311-f2854dfd5a6e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +55,7 @@
       <updated>1686242861942</updated>
       <workItem from="1686242865621" duration="1568000" />
       <workItem from="1686244775458" duration="180000" />
+      <workItem from="1686245170012" duration="380000" />
     </task>
     <servers />
   </component>
