@@ -14,4 +14,4 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
     </Provider>
 )
 
-export default React.memo(App)
+export default App

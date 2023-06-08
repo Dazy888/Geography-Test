@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b4e142e-3705-4dd0-8e21-3dc8894e385f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Stats.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Stats.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/Test.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/Test.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="3b4e142e-3705-4dd0-8e21-3dc8894e385f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +66,7 @@
       <workItem from="1679052423192" duration="1652000" />
       <workItem from="1679062319010" duration="4331000" />
       <workItem from="1686241229949" duration="12000" />
-      <workItem from="1686241243451" duration="471000" />
+      <workItem from="1686241243451" duration="863000" />
     </task>
     <servers />
   </component>
