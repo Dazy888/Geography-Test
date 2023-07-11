@@ -4,7 +4,6 @@ interface TestState {
     questions: string[]
     answers: Array<string[]>
     trueAnswers: string[]
-    images: string[]
     userAnswer: string
     userAnswers: string[]
     wastedTime: number
@@ -25,7 +24,6 @@ let initialState: TestState = {
         ['2', '5', '4', '3'], ['Jupiter', 'Saturn', 'Mars', 'Neptune'], ['6', '8', '5', '7']
     ],
     trueAnswers: ['Ukraine', 'Caspian Sea', 'Elbrus', 'Volga', 'Greenland', '5', '6', '3', 'Jupiter', '8'],
-    images: ['1.png', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'],
     userAnswer: '',
     userAnswers: [],
     wastedTime: 0,
