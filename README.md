@@ -1,5 +1,5 @@
 ## Geography Test project
-**Author**: Davyd Hutsenko
+**Author:** Davyd Hutsenko
 
 ## Getting Started
 
