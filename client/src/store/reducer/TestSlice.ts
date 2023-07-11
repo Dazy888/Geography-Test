@@ -16,8 +16,8 @@ interface TestState {
 let initialState: TestState = {
     questions: [
         'What country is the biggest in Europe?', 'What lake is the biggest in Europe?', 'What mountain is the biggest in Europe?', 'What river is the longest in Europe?',
-        'What island is the biggest in the world?', 'How many oceans are on the planet?', 'How many mainlands are on the planet?',
-        'What is the account of the earth from the sun?', 'What is the biggest planet in the solar system?', 'How many planets are in the solar system?'
+        'What island is the biggest in the world?', 'How many oceans are on the planet?', 'How many mainlands are on the planet?', 'What is the account of the earth from the sun?',
+        'What is the biggest planet in the solar system?', 'How many planets are in the solar system?'
     ],
     answers: [
         ['France', 'Ukraine', 'Germany', 'Poland'], ['Caspian Sea', 'Onega', 'Vanern', 'Ladoga'], ['Elbrus', 'Shikhar', 'Konstan-Tau', 'Mont Blanc'],
@@ -25,7 +25,7 @@ let initialState: TestState = {
         ['2', '5', '4', '3'], ['Jupiter', 'Saturn', 'Mars', 'Neptune'], ['6', '8', '5', '7']
     ],
     trueAnswers: ['Ukraine', 'Caspian Sea', 'Elbrus', 'Volga', 'Greenland', '5', '6', '3', 'Jupiter', '8'],
-    images: ['question-1.png', 'question-2.jpg', 'question-3.jpg', 'question-4.jpg', 'question-5.jpg', 'question-6.jpg', 'question-7.jpg', 'question-8.jpg', 'question-9.jpg', 'question-10.jpg'],
+    images: ['1.png', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'],
     userAnswer: '',
     userAnswers: [],
     wastedTime: 0,
@@ -62,5 +62,9 @@ export const testSlice = createSlice({
     }
 })
 
-export const { addUserAnswer, resetUserAnswers, setUserAnswer, resetPassedQuestions, setPassedQuestions, setCurrentQuestion, setWastedTime } = testSlice.actions
+export const { addUserAnswer, resetUserAnswers, setUserAnswer,
+    resetPassedQuestions, setPassedQuestions, setCurrentQuestion,
+    setWastedTime
+} = testSlice.actions
+
 export const testReducer = testSlice.reducer

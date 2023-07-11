@@ -1,17 +1,35 @@
+$lightGreen: rgb(111, 224, 202);
+$pink: rgb(255, 94, 149);
+
 @keyframes textAnim {
-  0% {filter: blur(0); transform: translateY(0)}
-  25% {filter: blur(5px); transform: translateY(-15px)}
-  50% {filter: blur(5px); transform: translateY(-15px)}
-  75% {filter: blur(5px); transform: translateY(-15px)}
-  100% {filter: blur(0); transform: translateY(0)}
+  0% {
+    filter: blur(0);
+    transform: translateY(0)
+  }
+  25% {
+    filter: blur(5px);
+    transform: translateY(-10px)
+  }
+  50% {
+    filter: blur(5px);
+    transform: translateY(-10px)
+  }
+  75% {
+    filter: blur(5px);
+    transform: translateY(-10px)
+  }
+  100% {
+    filter: blur(0);
+    transform: translateY(0)
+  }
 }
 
 @keyframes imgAnim {
-  0% {filter: blur(0)}
-  25% {filter: blur(20px)}
-  50% {filter: blur(20px)}
-  75% {filter: blur(20px)}
-  100% {filter: blur(0)}
+  0% { filter: blur(0) }
+  25% { filter: blur(20px) }
+  50% { filter: blur(20px) }
+  75% { filter: blur(20px) }
+  100% { filter: blur(0) }
 }
 
 .text-animation {
@@ -25,12 +43,12 @@
 }
 
 #wrapper {
-  .header {
-    border-bottom: 3px solid rgb(111, 224, 202);
+  header {
+    border-bottom: 3px solid $lightGreen;
 
     .clock-icon, .current-question-icon {
       font-size: 35px;
-      color: rgb(111, 224, 202);
+      color: $lightGreen;
     }
 
     .timer {
@@ -38,9 +56,13 @@
       padding: 0 30px;
 
       div {
+        height: 140px;
+
         svg {
-          width: 170px;
-          height: 150px;
+          width: 125px;
+          height: 125px;
+          left: 50%;
+          transform: translateX(-50%);
 
           circle {
             transform-origin: center;
@@ -50,111 +72,68 @@
         }
 
         p {
-          top: 60px;
-          left: 205px;
-
-          span:last-child {
-            position: absolute;
-            top: 5px;
-            right: -20px;
-            font-size: 15px;
-          }
+          bottom: 56px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }
 
     .questions {
-      width: 530px;
       padding: 0 75px;
-      border-left: 3px solid rgb(111, 224, 202);
+      border-left: 3px solid $lightGreen;
 
-      .questions__rows {
-        width: 300px;
+      div {
+        .current-question {
+          background-color: $pink !important;
+          border: 3px solid $pink !important;
+          color: white;
+        }
 
-        div {
-          .current-question {
-            width: 46px !important;
-            height: 46px !important;
-            background-color: rgb(255, 94, 149);
-            border: none !important;
-            color: white;
-          }
-
-          div {
-            border: 3px solid rgb(111, 224, 202);
-            transition: 1.5s;
-          }
+        .questions__number {
+          border: 3px solid $lightGreen;
         }
       }
     }
   }
 
-  .content {
+  main {
     img {
       width: 600px;
       height: 330px;
-      border: 3px solid rgb(255, 94, 149);
+      border: 3px solid $pink;
     }
 
     .answers {
-      width: 500px;
-      grid-template-areas:    'a b'
-                              'c d'
-                              'btn btn';
+      min-width: 500px;
 
       .selected-answer {
-        width: 41px !important;
-        height: 41px !important;
-        background-color: rgb(255, 94, 149);
+        background-color: $pink;
         border: none !important;
         color: white;
       }
 
-      .a {
-        grid-area: a;
-      }
-
-      .b {
-        grid-area: b;
-      }
-
-      .c {
-        grid-area: c;
-        margin-top: 80px;
-      }
-
-      .d {
-        grid-area: d;
-        margin-top: 80px;
-      }
-
       div {
-        width: 250px;
-
         span {
-          border: 3px solid rgb(111, 224, 202);
+          border: 3px solid $lightGreen;
           transition: box-shadow 0.5s;
         }
       }
     }
 
     .next-btn {
-      grid-area: btn;
+      color: $lightGreen;
 
-      &:hover i {
-        color: rgb(255, 94, 149);
-      }
-
-      i {
-        color: rgb(111, 224, 202);
+      &:hover {
+        color: $pink;
       }
     }
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
   #wrapper {
-    .header {
+    header {
       .clock-icon, .current-question-icon {
         font-size: 30px;
       }
@@ -169,105 +148,52 @@
 
       .timer {
         width: 390px;
-
-        div p {
-          left: 138px;
-        }
       }
 
       .questions {
         width: fit-content;
 
-        .questions__rows i {
+        .questions__number {
+          width: 38px;
+          height: 38px;
           font-size: 16px;
         }
       }
     }
-  }
-}
 
-@media (max-width: 1024px) {
-  #wrapper {
-    .header {
-      .clock-icon, .current-question-icon {
-        font-size: 25px;
-      }
-
-      .timer {
-        width: 320px;
-
-        div {
-          svg {
-            width: 130px;
-            height: 130px;
-
-            circle {
-              r: 50;
-              cx: 60;
-              cy: 65;
-            }
-          }
-
-          p {
-            top: 57px;
-            left: 128px;
-
-            span {
-              font-size: 25px;
-
-              &:last-child {
-                top: 3px;
-                right: -18px;
-                font-size: 13px;
-              }
-            }
-          }
-        }
-      }
-
-      .questions {
-        padding: 0 40px;
-
-        .questions__rows {
-          width: 260px;
-
-          .current-question {
-            width: 36px !important;
-            height: 36px !important;
-          }
-
-          span {
-            width: 30px;
-            height: 30px;
-
-            i {
-              font-size: 15px;
-            }
-          }
-        }
-      }
-    }
-
-    .next-btn:hover i {
-      color: rgb(111, 224, 202) !important;
+    main .next-btn:hover {
+      color: $lightGreen !important;
     }
   }
 }
 
 @media (max-width: 768px) {
   #wrapper {
-    .header {
+    header {
       width: fit-content;
       flex-direction: column;
       margin: auto;
+
+      .clock-icon, .current-question-icon {
+        font-size: 25px;
+      }
 
       .timer {
         width: 100%;
         border-bottom: 3px solid rgb(111, 224, 202);
         padding-bottom: 10px;
 
-        div p {
-          left: 98px;
+        div {
+          svg circle {
+            r: 50;
+            cx: 60;
+            cy: 65;
+          }
+
+          p {
+            font-size: 25px;
+            bottom: 55px;
+          }
         }
       }
 
@@ -275,10 +201,16 @@
         width: fit-content;
         border-left: none;
         padding: 20px 30px 0;
+
+        .questions__number {
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+        }
       }
     }
 
-    .content {
+    main {
       .question {
         p {
           font-size: 21px;
@@ -288,15 +220,15 @@
         img {
           width: 420px;
           height: 230px;
+          border: 2px solid $pink;
         }
       }
 
       .answers {
-        width: 420px;
+        min-width: 400px;
+        column-gap: 20px;
 
         div {
-          width: 210px;
-
           i {
             font-size: 17px;
           }
@@ -306,16 +238,12 @@
           }
         }
       }
-
-      .next-btn i {
-        font-size: 50px;
-      }
     }
   }
 }
 
 @media (max-width: 425px) {
-  #wrapper .content {
+  #wrapper main {
     .question {
       p {
         font-size: 18px;
@@ -328,18 +256,14 @@
     }
 
     .answers {
-      width: 370px;
-    }
-
-    .next-btn i {
-      font-size: 50px;
+      min-width: 360px;
     }
   }
 }
 
 @media (max-width: 375px) {
   #wrapper {
-    .header {
+    header {
       .clock-icon {
         margin-bottom: 15px;
       }
@@ -354,31 +278,12 @@
         }
 
         p {
-          top: 58px;
-          left: 100px;
-
-          span {
-            font-size: 22px;
-
-            &:last-child {
-              right: -15px;
-              font-size: 11px;
-            }
-          }
-        }
-      }
-
-      .questions span {
-        width: 28px;
-        height: 28px;
-
-        i {
-          font-size: 15px;
+          font-size: 22px;
         }
       }
     }
 
-    .content {
+    main {
       .question {
         p {
           font-size: 17px;
@@ -391,25 +296,9 @@
       }
 
       .answers {
-        width: 320px;
-        grid-gap: 50px;
-
-        .c {
-          margin-top: 0;
-        }
-
-        .d {
-          margin-top: 0;
-        }
-
-        .selected-answer {
-          width: 33px !important;
-          height: 33px !important;
-        }
+        min-width: 300px;
 
         div {
-          width: 160px;
-
           span {
             width: 33px;
             height: 33px;
@@ -423,11 +312,30 @@
             font-size: 14px;
           }
         }
-
-        .next-button i {
-          font-size: 55px;
-        }
       }
+
+      .next-btn {
+        font-size: 45px;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #wrapper main {
+    .question {
+      p {
+        font-size: 17px;
+      }
+
+      img {
+        width: 95%;
+        height: 180px;
+      }
+    }
+
+    .answers {
+      min-width: 260px;
     }
   }
 }

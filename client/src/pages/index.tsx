@@ -1,11 +1,9 @@
 import React, { useState } from "react"
+import Link from 'next/link'
 import Head from 'next/head'
-import { useRouter } from "next/router"
 import styles from '@/styles/Index.module.scss'
 
 const Home = () => {
-    const router = useRouter()
-
     const [wrapperStyle, setWrapperStyle] = useState<Object>()
     const [loadAnimation, setLoadAnimation] = useState('')
 
@@ -17,12 +15,12 @@ const Home = () => {
             <Head>
                 <title>Start</title>
             </Head>
-            <div style={wrapperStyle} id={styles.wrapper} className={'flex items-center min-h-screen'}>
-                <div className={`${styles.content} ${loadAnimation} flex justify-center items-center overflow-hidden pt-7 pb-2.5 rounded-xl opacity-0 h-0 mx-auto`}>
+            <div style={wrapperStyle} id={styles.wrapper} className={'flex-center min-h-screen'}>
+                <div className={`${styles.content} ${loadAnimation} flex-center overflow-hidden rounded-xl opacity-0 h-0 px-24`}>
                     <div className={'text-center'}>
-                        <p className={'text-5xl'}>Welcome : Do you want to start taking the test?</p>
-                        <hr className={'w-4/5 mt-28 mx-auto'}/>
-                        <button className={'relative mt-28 mx-auto text-5xl'} onClick={() => router.push('/test')}>Start</button>
+                        <p className={'text-4xl'}>Welcome : Do you want to start taking the test?</p>
+                        <hr className={'w-4/5 h-1 my-16 border-0 mx-auto rounded-3xl'}/>
+                        <Link className={'relative mx-auto text-3xl duration-300'} href={'/test'}>Start</Link>
                     </div>
                 </div>
             </div>

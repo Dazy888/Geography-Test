@@ -6,8 +6,8 @@ interface Props {
 }
 
 const NextButtonComponent: React.FC<Props> = ({ nextQuestionListener }) => (
-    <button onClick={nextQuestionListener} className={`${styles['next-btn']} mx-auto mt-10`}>
-        <i className={'fa-regular fa-circle-right text-5xl duration-300'}/>
+    <button onClick={nextQuestionListener} className={`${styles['next-btn']} text-5xl duration-300 mx-auto mt-10`}>
+        <i className={'fa-regular fa-circle-right'} />
     </button>
 )
 
