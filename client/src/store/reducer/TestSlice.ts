@@ -15,9 +15,9 @@ interface TestState {
 
 let initialState: TestState = {
     questions: [
-        'What country is the biggest in Europe?', 'What lake is the biggest in Europe?', 'What mountain is the biggest in Europe?', 'What river is the longest in Europe?',
-        'What island is the biggest in the world?', 'How many oceans are on the planet?', 'How many mainlands are on the planet?', 'What is the account of the earth from the sun?',
-        'What is the biggest planet in the solar system?', 'How many planets are in the solar system?'
+        'What is the largest country in Europe?', 'What is the biggest lake in Europe?', 'What is the highest mountain in Europe?', 'What is the longest river in Europe?',
+        'What is the biggest island in the world?', 'How many oceans are on the planet?', 'How many continents are on the planet?', 'What is the number of Earth from the Sun',
+        'What is the largest planet in the Solar System?', 'How many planets are in the Solar System?'
     ],
     answers: [
         ['France', 'Ukraine', 'Germany', 'Poland'], ['Caspian Sea', 'Onega', 'Vanern', 'Ladoga'], ['Elbrus', 'Shikhar', 'Konstan-Tau', 'Mont Blanc'],
