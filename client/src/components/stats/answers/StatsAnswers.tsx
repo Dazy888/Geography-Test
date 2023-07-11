@@ -2,6 +2,7 @@ import React from "react"
 import styles from "@/styles/Stats.module.scss"
 import { AnswersRow } from "@/components/stats/answers/AnswersRow"
 import { useAppSelector } from "@/hooks/redux"
+import { v4 } from "uuid"
 
 interface Props {
     trueAnswers: string[]
@@ -21,7 +22,7 @@ const StatsAnswersComponents: React.FC<Props> = ({ userAnswers, trueAnswers}) =>
     return(
         <div className={`${styles.answers} mx-auto relative text-center`}>
             {userAnswers.map((userAnswer, index) => (
-                <AnswersRow question={questions[index]} answers={answers[index]} trueAnswer={trueAnswers[index]} userAnswer={userAnswer} additionalInfo={additionalInfo[index]} />
+                <AnswersRow key={v4()} question={questions[index]} answers={answers[index]} trueAnswer={trueAnswers[index]} userAnswer={userAnswer} additionalInfo={additionalInfo[index]} />
             ))}
         </div>
     )
