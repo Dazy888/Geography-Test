@@ -8,17 +8,24 @@ import { Question } from "@/components/test/content/Question"
 import { Answers } from "@/components/test/content/answers/Answers"
 import { NextBtn } from "@/components/test/content/NextBtn"
 
+export const answers = [
+    ['France', 'Ukraine', 'Germany', 'Poland'], ['Caspian Sea', 'Onega', 'Vanern', 'Ladoga'], ['Elbrus', 'Shikhar', 'Konstan-Tau', 'Mont Blanc'],
+    ['Ural', 'Volga', 'Dynpro', 'Belay'], ['Madagascar', 'New Guinea', 'Borneo', 'Greenland'], ['4', '7', '3', '5'], ['3', '5', '9', '6'],
+    ['2', '5', '4', '3'], ['Jupiter', 'Saturn', 'Mars', 'Neptune'], ['6', '8', '5', '7']
+]
+
 const MainComponent = () => {
     const dispatch = useAppDispatch()
     const router = useRouter()
 
     const currentQuestion = useAppSelector(state => state.testReducer.currentQuestion)
-    const answers = useAppSelector(state => state.testReducer.answers[currentQuestion])
     const userAnswer = useAppSelector(state => state.testReducer.userAnswer)
 
     const nextQuestionListener = () => {
         if (!userAnswer) return
-        if (currentQuestion === 9) router.push('/stats')
+        if (currentQuestion === 9) {
+            router.push('/stats')
+        }
 
         dispatch(addUserAnswer(userAnswer))
         dispatch(setUserAnswer(''))
@@ -42,9 +49,14 @@ const MainComponent = () => {
 
     return(
         <main className={'text-center mx-auto'}>
-            <Question {...{ imgAnim, textAnim }} />
-            <Answers {...{ answers, textAnim }} />
-            <NextBtn {...{ nextQuestionListener }} />
+            { answers
+                ?    <>
+                        <Question {...{ imgAnim, textAnim }} />
+                        <Answers {...{ textAnim }} answers={answers[currentQuestion]} />
+                        <NextBtn {...{ nextQuestionListener }} />
+                     </>
+                :    <div className={`${styles.loader} mx-auto mt-60`}></div>
+            }
         </main>
     )
 }

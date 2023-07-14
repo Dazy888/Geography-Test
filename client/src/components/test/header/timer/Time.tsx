@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useRouter } from "next/router"
 import { useAppDispatch, useAppSelector } from "@/hooks/redux"
 import { useTimer } from "react-timer-hook"
-import { setWastedTime } from "@/store/reducer/TestSlice"
+import {setFinishedTest, setWastedTime} from "@/store/reducer/TestSlice"
 
 const TimeComponent = () => {
     const dispatch = useAppDispatch()

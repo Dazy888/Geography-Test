@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router"
 import { useAppDispatch } from "@/hooks/redux"
 import styles from "@/styles/Stats.module.scss"
-import { resetPassedQuestions, resetUserAnswers, setCurrentQuestion } from "@/store/reducer/TestSlice"
+import { resetPassedQuestions, resetUserAnswers, setCurrentQuestion, setFinishedTest, setWastedTime } from "@/store/reducer/TestSlice"
 
 const RestartBtnComponent = () => {
     const dispatch = useAppDispatch()
@@ -12,6 +12,8 @@ const RestartBtnComponent = () => {
         dispatch(resetUserAnswers())
         dispatch(setCurrentQuestion(0))
         dispatch(resetPassedQuestions())
+        dispatch(setWastedTime(0))
+        dispatch(setFinishedTest(false))
         router.push('/')
     }
 

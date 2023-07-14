@@ -1,8 +1,10 @@
 import React from "react"
+import { v4 } from "uuid"
 import styles from "@/styles/Stats.module.scss"
 import { AnswersRow } from "@/components/stats/answers/AnswersRow"
-import { useAppSelector } from "@/hooks/redux"
-import { v4 } from "uuid"
+// Static Data
+import { answers } from "@/components/test/content/Main"
+import { questions } from "@/components/test/content/Question"
 
 interface Props {
     trueAnswers: string[]
@@ -10,9 +12,6 @@ interface Props {
 }
 
 const StatsAnswersComponents: React.FC<Props> = ({ userAnswers, trueAnswers}) => {
-    const answers = useAppSelector(state => state.testReducer.answers)
-    const questions = useAppSelector(state => state.testReducer.questions)
-
     const additionalInfo = [
         ['543.940 km²', '603.548 km²', '357.588 km²', '312.679 km²'], ['371.000 km²', '9.700 km²', '5.650 km²', '17.700 km²'], ['5.642 m', '5.193 m', '5.144 m', '4.809 m'],
         ['2.428 km', '3.530 km', '2.201 km', '1.430 km'], ['587.041 km²', '786.000 km²', '743.330 km²', '2.166.000 km²'], [], [], [],

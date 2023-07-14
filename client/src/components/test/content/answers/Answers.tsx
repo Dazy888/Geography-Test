@@ -7,13 +7,21 @@ interface Props {
     textAnim: string
 }
 
-const AnswersComponent: React.FC<Props> = ({ answers, textAnim }) => (
-    <div className={`${styles.answers} w-fit grid grid-cols-2 justify-center gap-y-16 gap-x-36 mt-5 mx-auto`}>
-        <Answer animation={textAnim} letter={'a'} answer={answers[0]}/>
-        <Answer animation={textAnim} letter={'b'} answer={answers[1]}/>
-        <Answer animation={textAnim} letter={'c'} answer={answers[2]}/>
-        <Answer animation={textAnim} letter={'d'} answer={answers[3]}/>
-    </div>
-)
+const AnswersComponent: React.FC<Props> = ({ answers, textAnim }) => {
+    console.log(answers)
+
+    return(
+        <div className={`${styles.answers} w-fit grid grid-cols-2 justify-center gap-y-16 gap-x-36 mt-5 mx-auto`}>
+            {answers &&
+                <>
+                    <Answer animation={textAnim} letter={'a'} answer={answers[0]}/>
+                    <Answer animation={textAnim} letter={'b'} answer={answers[1]}/>
+                    <Answer animation={textAnim} letter={'c'} answer={answers[2]}/>
+                    <Answer animation={textAnim} letter={'d'} answer={answers[3]}/>
+                </>
+            }
+        </div>
+    )
+}
 
 export const Answers = React.memo(AnswersComponent)
