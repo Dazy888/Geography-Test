@@ -3,7 +3,7 @@ import { Timer } from "@/components/test/header/timer/Timer"
 import { Questions } from "@/components/test/header/questions/Questions"
 
 const HeaderComponent = () => (
-    <header className={`flex justify-between items-baseline pt-7`}>
+    <header className={`flex justify-between items-baseline pt-7 mt-10`}>
         <Timer />
         <Questions />
     </header>

@@ -48,15 +48,10 @@ const MainComponent = () => {
     }
 
     return(
-        <main className={'text-center mx-auto'}>
-            { answers
-                ?    <>
-                        <Question {...{ imgAnim, textAnim }} />
-                        <Answers {...{ textAnim }} answers={answers[currentQuestion]} />
-                        <NextBtn {...{ nextQuestionListener }} />
-                     </>
-                :    <div className={`${styles.loader} mx-auto mt-60`}></div>
-            }
+        <main className={'text-center mx-auto mb-10'}>
+            <Question {...{ imgAnim, textAnim }} />
+            <Answers {...{ textAnim }} answers={answers[currentQuestion]} />
+            <NextBtn {...{ nextQuestionListener }} />
         </main>
     )
 }
