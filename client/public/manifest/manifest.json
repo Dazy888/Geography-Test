@@ -1,11 +1,10 @@
 {
+    "name": "Geography Test",
+    "short_name": "GT-PWA",
     "theme_color": "#00b894",
     "background_color": "#00b894",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
-    "name": "Geography Test",
-    "short_name": "GT-PWA",
+    "start_url": ".",
     "icons": [
         {
             "src": "/pwa-icons/icon-192x192.png",
